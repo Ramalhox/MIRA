@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font-family: sans-serif;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #111;
+    color: #fff;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav li {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav li.active {
+    color: #ff7033;
+    font-weight: bold;
+}
+
+/* BANNER */
+.banner {
+    position: relative;
+    height: 450px;
+    background: url('../img/banner.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 48px;
+    margin: 0;
+    max-width: 400px;
+}
+
+.banner p {
+    max-width: 450px;
+    font-size: 18px;
+    margin: 10px 0 25px 0;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background: #ff7033;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+}
+
+.btn:focus {
+    outline: 4px solid cyan;
+}
+
+/* SECTION */
+.section {
+    margin: 40px;
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* GRID */
+.grid {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.card:focus {
+    outline: 3px solid orange;
+    /* ajuste como quiser */
+    transform: scale(1.05);
+}
+
+
+.card {
+    height: 140px;
+    background: #ccc;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card:focus {
+    outline: 4px solid cyan;
+}
+
+/* CONTRASTE */
+.high-contrast * {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+/* BOTÃO DE ACESSIBILIDADE */
+#access-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    background: #ff7033;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
