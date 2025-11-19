@@ -1,0 +1,281 @@
+/* 1. RESET E ESTILOS BASE (GLOBAL) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. BARRA DE NAVEGAÇÃO SUPERIOR (HEADER) */
+.main-header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; 
+    
+    /* Efeito de vidro fosco */
+    background: rgba(0, 0, 0, 0.4); 
+    box-sizing: border-box; 
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff5722;
+    text-transform: uppercase;
+}
+
+/* --- Pesquisa --- */
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 50px;
+}
+
+#search-input {
+    width: 400px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #ff5722;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Ícones --- */
+.user-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-icon, .nav-profile {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.nav-icon:hover, .nav-profile:hover {
+    color: #ff5722;
+}
+
+.nav-profile {
+    font-size: 24px;
+}
+
+/* 3. SECÇÃO DE DESTAQUE (HERO) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 90vh; 
+    overflow: hidden;
+    
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 35%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 5;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 10;
+    max-width: 500px;
+}
+
+.hero-title {
+    font-size: 4em;
+    /* Mudar Fonte */
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+}
+
+.hero-description {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NAVEGAÇÃO DE CATEGORIAS (NAV) */
+.catalog-nav {
+    margin-top: 30px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 20; 
+}
+
+.catalog-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.catalog-nav a {
+    color: #ccc;
+    font-size: 1.1em;
+    font-weight: normal;
+    transition: color 0.3s, font-weight 0.3s;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.catalog-nav a.active {
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #ff5722; 
+}
+
+.catalog-nav a:hover {
+    color: #fff;
+}
+
+/* SEÇÃO DO CATÁLOGO E CARDS */
+.catalog-section {
+    padding: 20px 40px;
+    margin-top: 50px; 
+    position: relative; 
+    z-index: 20;
+}
+
+.section-title {
+    font-size: 1.5em;    
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* --- Grelha dos Filmes --- */
+.filmes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+    justify-content: start;
+}
+
+/* --- Card Individual --- */
+.card {
+    width: 200px;
+    height: 300px;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    z-index: 30;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- Conteúdo do Card --- */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.card:hover .card-content {
+    transform: translateY(0);
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
