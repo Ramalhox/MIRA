@@ -11,7 +11,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-    background: #111;
+    background-color: #000;
     color: #fff;
 }
 
@@ -40,7 +40,7 @@ nav li.active {
 .banner {
     position: relative;
     height: 450px;
-    background: url('../img/banner.jpg') center/cover no-repeat;
+    background: url('images/Imagem\ filme.png') center/cover no-repeat;
     color: #fff;
     padding: 60px;
     display: flex;
@@ -52,11 +52,13 @@ nav li.active {
     font-size: 48px;
     margin: 0;
     max-width: 400px;
+    font-weight: 800;
 }
 
 .banner p {
     max-width: 450px;
     font-size: 18px;
+    font-weight: 300;
     margin: 10px 0 25px 0;
 }
 

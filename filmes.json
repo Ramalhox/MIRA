@@ -1,0 +1,34 @@
+[{
+    "id": "51186",
+    "title": "Tainá 2: A Aventura Continua",
+    "poster": "https://image.tmdb.org/t/p/w500/aIBdGH3AV2Hni30KWwuq76XN1ty.jpg",
+    "overview": "A pequenina índia Catiti anda pela floresta seguindo e imitando Tainá, hoje uma linda e corajosa adolescente. Elas inutilizam as armadilhas dos traficantes de espécimes raros e, durante suas aventuras, encontram Carlito, garoto da cidade à procura de seu cachorrinho perdido, que Catiti resgata e quer adotar como seu xerimbabo (bichinho de estimação), pois todas as crianças da aldeia têm um, com exceção de Catiti. Quando a quadrilha se apodera dos xerimbabos da aldeia, todas as crianças devem esquecer as diferenças de cultura e temperamento para socorrer os cativos e se unirem sob a liderança de Tainá.",
+    "contentType": "MOVIE",
+    "genreIds": [
+        12,
+        10751
+    ]
+},
+{
+    "id": "45761",
+    "title": "Andando nas Nuvens",
+    "poster": "https://image.tmdb.org/t/p/w500/7AzB173IsIJzwmQn8Kgo4ExerMa.jpg",
+    "overview": "As aventuras de um homem sem memória que luta para redescobrir o passado ao mesmo tempo em que precisa aprender a viver no presente.",
+    "contentType": "TV_SHOW",
+    "genreIds": [
+        10766,
+        35
+    ]
+},
+{
+    "id": "158866",
+    "title": "Rebelde Way",
+    "poster": "https://image.tmdb.org/t/p/w500/9qYlufoUmXGRtEeHT9LXXKLuo6v.jpg",
+    "overview": "Quatro jovens que, apesar das diferenças, descobrem algo que os une acima de tudo: a música.",
+    "contentType": "TV_SHOW",
+    "genreIds": [
+        35,
+        18,
+        10751
+    ]
+}]
