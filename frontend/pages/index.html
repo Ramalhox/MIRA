@@ -5,31 +5,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/frontend/css/index.css">
-  <title>MIRA - login</title>
+  <title>MIRA</title>
 </head>
 
 <body>
 
-  <section class="header">
-    <div class="logo">MIRA</div>
-  </section>
-
   <section class="hero-section">
+    <header class="main-header">
+      <div class="logo">
+        <img src="../images/MIRA.png" alt="">
+      </div>
+    </header>
 
-    <div class="title">
-      <h1>O MELHOR DO CINEMA <span>BRASILEIRO</span></h1>
-    </div>
-    <div class="subtitle">
-      <p>Assista a produções nacionais únicas, conheça o melhor do audiovisual nacional e desfrute a beleza que é esse
-        cinema!</p>
-    </div>
+    <div class="hero-content-container">
+        <div class="hero-text">
+            <h1 class="hero-title">O MELHOR DO CINEMA <span>BRASILEIRO</span></h1>
+            <p class="hero-subtitle">Assista a produções nacionais únicas, conheça o melhor do audiovisual nacional e desfrute a beleza que é esse cinema!</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Entrar</button>
+                <button class="btn-secondary">Planos</button>
+            </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="buttons">
-      <button>Entrar</button>
-      <button>Planos</button>
-    </div>
-
+  <section class="section-experience">
+      <h2 class="section-title">EXPERIÊNCIA MIRA DE CINEMA</h2>
+      <div class="experience-card-container">
+          </div>
   </section>
+
+  <section class="section-audience">
+    <div class="audience-container">
+        <div class="audience-card" id="card-spectator">
+            <h3 class="audience-title">PARA ESPECTADORES</h3>
+            <p class="audience-text">
+                Descubra o melhor do cinema nacional com curadoria de especialistas. Assista a filmes e documentários únicos, indisponíveis em outras plataformas.
+            </p>
+            <button class="btn-clean">Ver Catálogo</button>
+        </div>
+        
+        <div class="audience-card" id="card-producer">
+            <h3 class="audience-title">PARA PRODUTORES</h3>
+            <p class="audience-text">
+                Publique o seu trabalho e receba royalties justos. Conecte-se a um público apaixonado e aumente a visibilidade das suas produções.
+            </p>
+            <button class="btn-clean">Saiba Mais</button>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-accessibility">
+    <div class="accessibility-content-container">
+        <h2 class="section-title">ACESSÍVEL PARA TODOS</h2>
+        <p class="accessibility-subtitle">
+            A acessibilidade é a nossa prioridade. Oferecemos recursos exclusivos para que o cinema nacional possa ser desfrutado por todas as pessoas.
+        </p>
+        <div class="accessibility-cards">
+            <div class="access-card">
+                <h3 class="card-title">Legendas Aprimoradas</h3>
+                <p>Legendas adaptadas para deficientes auditivos, incluindo descrição de sons e emoções.</p>
+            </div>
+            <div class="access-card">
+                <h3 class="card-title">Audiodescrição</h3>
+                <p>Narrações detalhadas para deficientes visuais, garantindo a compreensão completa da cena.</p>
+            </div>
+            <div class="access-card">
+                <h3 class="card-title">LIBRAS</h3>
+                <p>Seleção de filmes com tradução em Língua Brasileira de Sinais embutida.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <section class="section-catalog">
+      <h2 class="section-title">UM CATÁLOGO ÚNICO</h2>
+      <div class="catalog-cards">
+        <div class="catalog-card" style="background-color: #3d3d3d;">DOCUMENTARIOS</div>
+        <div class="catalog-card" style="background-color: #000000;">FILMES</div>
+        <div class="catalog-card" style="background-color: #000000;">SÉRIES</div>
+        <div class="catalog-card" style="background-color: #3d3d3d;">CURTAS</div>
+      </div>
+      
+      <h3 class="subsection-title">O QUE VOCÊ ENCONTRA:</h3>
+      <div class="resource-cards">
+          <div class="resource-card"></div>
+          <div class="resource-card"></div>
+          <div class="resource-card"></div>
+          <div class="resource-card"></div>
+      </div>
+  </section>
+
+
+<section class="section-sabia">
+    <div class="sabia-container">
+        <h2 class="sabia-title">SABIÁ: SEU GUIA DE CINEMA</h2>
+        <p class="sabia-text">
+            Conheça o Sabiá, a nossa inteligência artificial que te ajuda a mergulhar nas histórias. Ele fornece informações contextuais, entrevistas com diretores e curiosidades sobre o elenco em tempo real.
+        </p>
+        <div class="sabia-cta">
+            <button class="btn-primary">Conheça o Sabiá</button>
+        </div>
+    </div>
+</section>
+
+
+    <section class="section-plans">
+        <h2 class="section-title">NOSSOS PLANOS</h2>
+        <div class="plan-cards">
+            <div class="plan-card" id="plano-freemium">
+                <div class="card-header">
+                    <div class="plan-icon" id="icon-freemium"></div> <h3>FREEMIUM</h3>
+                </div>
+                <p>Acesso limitado ao catálogo</p>
+                <p class="price">GRÁTIS</p>
+            </div>
+            <div class="plan-card" id="plano-premium">
+              <div class="card-header">
+                  <div class="plan-icon" id="icon-premium"></div> <h3>PREMIUM</h3>
+              </div>
+              <p>Acesso total ao catálogo</p>
+              <p class="price">R$ 29,90/mês</p>
+          </div>
+            <!-- <div class="plan-card">PLANO 3</div> -->
+        </div>
+    </section>
+
+    <section class="section-review">
+        <h3 class="review-text">SEJA O PROTAGONISTA DA SUA PRÓPRIA HISTÓRIA!</h3>
+        <div class="rating">
+            </div>
+        </section>
+
+    <footer class="main-footer">
+      © 2025 MIRA. Todos os direitos reservados.
+    </footer>
 </body>
 
 </html>
