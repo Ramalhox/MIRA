@@ -185,5 +185,5 @@ export function inicializarSabiaWidget() {
         }
     }, 1500);
 
-    console.log("Widget Sabiá inicializado com sucesso!");
+    console.log("Widget Sabiá inicializado com sucesso!");
 }

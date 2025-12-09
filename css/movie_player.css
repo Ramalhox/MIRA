@@ -304,7 +304,7 @@
 }
 
 .rating-value {
-    color: var(--primary-color);
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -398,11 +398,13 @@
 }
 
 .stat-label {
+    color: white;
     font-size: 0.9rem;
     opacity: 0.8;
 }
 
 .stat-value {
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -856,11 +858,11 @@
     font-size: 4rem;
 }
 
-/* Botão Fixo de Feedback */
+/* Botão Fixo de Feedback */    
 .feedback-fixed-btn {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     background: linear-gradient(135deg, var(--primary-color), #ff6b35);
     color: white;
     border: none;
@@ -921,7 +923,7 @@
 .feedback-suggestion-modal {
     position: fixed;
     bottom: 100px;
-    right: 30px;
+    left: 30px;
     background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
     border-radius: 15px;
     padding: 20px;

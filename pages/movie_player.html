@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Observar e Absorver - MiraCine</title>
 </head>
 
 <body>
+    <div id="sabia-widget-container">
+
+    </div>
+
     <div id="navbar-container"></div>
 
     <section class="hero-section">
@@ -363,17 +368,17 @@
                 <i class="fas fa-times"></i>
             </button>
         </div>
-        
+
         <div class="film-progress-indicator">
             <div class="film-progress-bar" id="filmProgressBar"></div>
         </div>
-        
+
         <div class="modal-content">
             <p><strong>Você assistiu 75% do filme!</strong></p>
             <p>Gostaríamos da sua opinião sobre as ferramentas de acessibilidade utilizadas.</p>
             <p>Sua avaliação ajuda a melhorar a experiência para todos.</p>
         </div>
-        
+
         <div class="modal-actions">
             <button class="modal-btn modal-btn-primary" id="evaluateNowBtn">
                 <i class="fas fa-star"></i> Avaliar Agora
@@ -382,7 +387,7 @@
                 <i class="far fa-clock"></i> Mais Tarde
             </button>
         </div>
-        
+
         <label class="dont-show-again">
             <input type="checkbox" id="dontShowAgain"> Não mostrar novamente
         </label>
@@ -397,15 +402,15 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="modal-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            
+
             <h2>O que você achou?</h2>
-            
+
             <p>Você acabou de assistir <strong>"Observar e Absorver"</strong>.</p>
-            
+
             <div class="modal-actions">
                 <button class="modal-btn modal-btn-primary" id="postEvaluateBtn">
                     <i class="fas fa-universal-access"></i> Avaliar Acessibilidade
@@ -417,7 +422,7 @@
                     <i class="fas fa-forward"></i> Continuar Assistindo
                 </button>
             </div>
-            
+
             <label class="dont-show-again" style="margin-top: 20px;">
                 <input type="checkbox" id="dontShowPostModal"> Não mostrar essa mensagem novamente
             </label>
@@ -448,7 +453,7 @@
     <script src="../js/template.js"></script>
     <script>
         // Sistema Completo de Movie Player
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initializeMoviePlayer();
             initializeFeedbackSystem();
         });
@@ -483,10 +488,10 @@
             function setupEventListeners() {
                 // Botão de trailer
                 document.getElementById('playTrailerBtn')?.addEventListener('click', playTrailer);
-                
+
                 // Botão assistir agora
                 document.getElementById('playVideoBtn')?.addEventListener('click', playVideo);
-                
+
                 // Botões de ação
                 document.getElementById('toggleFavoriteBtn')?.addEventListener('click', toggleFavorite);
                 document.getElementById('addToListBtn')?.addEventListener('click', addToList);
@@ -496,12 +501,12 @@
                 document.getElementById('viewCatalogBtn')?.addEventListener('click', () => {
                     window.location.href = 'catalog.html';
                 });
-                
+
                 // Fechar trailer
                 document.getElementById('closeTrailerBtn')?.addEventListener('click', closeTrailer);
-                
+
                 // Fechar modal com ESC
-                document.addEventListener('keydown', function(e) {
+                document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape') {
                         closeTrailer();
                         hideSuggestionModal();
@@ -516,9 +521,9 @@
                 updateFavoriteIcon();
                 saveDocumentaryState();
                 showNotification(
-                    documentary.isFavorite ? 
-                    'Adicionado aos favoritos!' : 
-                    'Removido dos favoritos.'
+                    documentary.isFavorite ?
+                        'Adicionado aos favoritos!' :
+                        'Removido dos favoritos.'
                 );
             }
 
@@ -527,9 +532,9 @@
                 updateListIcon();
                 saveDocumentaryState();
                 showNotification(
-                    documentary.isInList ? 
-                    'Adicionado à sua lista!' : 
-                    'Removido da sua lista.'
+                    documentary.isInList ?
+                        'Adicionado à sua lista!' :
+                        'Removido da sua lista.'
                 );
             }
 
@@ -581,8 +586,8 @@
             function updateFavoriteIcon() {
                 const heartIcon = document.getElementById('toggleFavoriteBtn')?.querySelector('i');
                 if (heartIcon) {
-                    heartIcon.className = documentary.isFavorite ? 
-                        'fa-solid fa-heart' : 
+                    heartIcon.className = documentary.isFavorite ?
+                        'fa-solid fa-heart' :
                         'fa-regular fa-heart';
                 }
             }
@@ -590,8 +595,8 @@
             function updateListIcon() {
                 const listIcon = document.getElementById('addToListBtn')?.querySelector('i');
                 if (listIcon) {
-                    listIcon.className = documentary.isInList ? 
-                        'fa-solid fa-check' : 
+                    listIcon.className = documentary.isInList ?
+                        'fa-solid fa-check' :
                         'fa-solid fa-plus';
                 }
             }
@@ -629,7 +634,7 @@
 
                 // Cards clicáveis
                 document.querySelectorAll('.carousel-card').forEach(card => {
-                    card.addEventListener('click', function() {
+                    card.addEventListener('click', function () {
                         const title = this.querySelector('.card-title')?.textContent;
                         alert(`Abrindo detalhes de: ${title}`);
                     });
@@ -637,7 +642,7 @@
 
                 // Botões de play nos cards
                 document.querySelectorAll('.card-play').forEach(btn => {
-                    btn.addEventListener('click', function(e) {
+                    btn.addEventListener('click', function (e) {
                         e.stopPropagation();
                         const card = this.closest('.carousel-card');
                         const title = card.querySelector('.card-title')?.textContent;
@@ -671,7 +676,7 @@
             // Configurar eventos
             function setupFeedbackEvents() {
                 // Botão fixo
-                fixedBtn?.addEventListener('click', function() {
+                fixedBtn?.addEventListener('click', function () {
                     if (!suggestionModal.classList.contains('active')) {
                         showSuggestionModal();
                     } else {
@@ -700,9 +705,9 @@
                 document.getElementById('closePostMovieModalBtn')?.addEventListener('click', closePostMovieModal);
 
                 // Fechar modal ao clicar fora
-                document.addEventListener('click', function(event) {
-                    if (suggestionModal.classList.contains('active') && 
-                        !suggestionModal.contains(event.target) && 
+                document.addEventListener('click', function (event) {
+                    if (suggestionModal.classList.contains('active') &&
+                        !suggestionModal.contains(event.target) &&
                         !fixedBtn.contains(event.target)) {
                         hideSuggestionModal();
                     }
@@ -714,7 +719,7 @@
 
                 if (dontShowCheckbox) {
                     dontShowCheckbox.checked = feedbackSettings.dontShowSuggestion;
-                    dontShowCheckbox.addEventListener('change', function() {
+                    dontShowCheckbox.addEventListener('change', function () {
                         localStorage.setItem('dontShowFeedbackSuggestion', this.checked);
                         feedbackSettings.dontShowSuggestion = this.checked;
                     });
@@ -722,7 +727,7 @@
 
                 if (dontShowPostCheckbox) {
                     dontShowPostCheckbox.checked = feedbackSettings.dontShowPostModal;
-                    dontShowPostCheckbox.addEventListener('change', function() {
+                    dontShowPostCheckbox.addEventListener('change', function () {
                         localStorage.setItem('dontShowPostModal', this.checked);
                         feedbackSettings.dontShowPostModal = this.checked;
                     });
@@ -736,13 +741,13 @@
             function showSuggestionModal() {
                 if (suggestionModal && !feedbackSettings.dontShowSuggestion && shouldShowFeedback()) {
                     suggestionModal.classList.add('active');
-                    
+
                     // Esconder badge
                     const badge = document.getElementById('feedbackBadge');
                     if (badge) {
                         badge.style.display = 'none';
                     }
-                    
+
                     // Atualizar contagem
                     feedbackSettings.timesShown++;
                     localStorage.setItem('feedbackTimesShown', feedbackSettings.timesShown);
@@ -763,23 +768,23 @@
             // Simular progresso do filme
             function startFilmProgress() {
                 if (!progressBar) return;
-                
+
                 let progress = 0;
                 const interval = setInterval(() => {
                     progress += 0.1;
                     progressBar.style.width = `${Math.min(progress, 100)}%`;
-                    
+
                     // Mostrar sugestão em 75%
                     if (progress >= 75 && progress < 76) {
                         if (!feedbackSettings.dontShowSuggestion && shouldShowFeedback()) {
                             showSuggestionModal();
                         }
                     }
-                    
+
                     // Mostrar modal pós-filme em 100%
                     if (progress >= 100) {
                         clearInterval(interval);
-                        
+
                         // Mostrar modal pós-filme após 2 segundos
                         setTimeout(() => {
                             if (postMovieModal && !feedbackSettings.dontShowPostModal) {
@@ -793,25 +798,25 @@
             // Verificar se deve mostrar feedback
             function shouldShowFeedback() {
                 const settings = feedbackSettings;
-                
+
                 if (settings.dontShowSuggestion && settings.dontShowPostModal) {
                     return false;
                 }
-                
+
                 if (settings.timesShown > 10) {
                     return false;
                 }
-                
+
                 if (settings.lastShown) {
                     const lastDate = new Date(settings.lastShown);
                     const now = new Date();
                     const hoursDiff = Math.abs(now - lastDate) / 36e5;
-                    
+
                     if (hoursDiff < 4) {
                         return false;
                     }
                 }
-                
+
                 return true;
             }
 
@@ -819,13 +824,13 @@
             function updateFeedbackBadge() {
                 const badge = document.getElementById('feedbackBadge');
                 if (!badge) return;
-                
+
                 const lastShown = feedbackSettings.lastShown;
                 if (lastShown) {
                     const lastDate = new Date(lastShown);
                     const now = new Date();
                     const hoursDiff = Math.abs(now - lastDate) / 36e5;
-                    
+
                     if (hoursDiff < 24 && feedbackSettings.timesShown > 3) {
                         badge.style.display = 'none';
                     }
@@ -905,4 +910,5 @@
         }
     </script>
 </body>
+
 </html>

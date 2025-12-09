@@ -26,8 +26,8 @@
 /* --- CONTAINER PRINCIPAL --- */
 #sabia-widget-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 10px;
+    right: 10px;
     z-index: 99999;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }

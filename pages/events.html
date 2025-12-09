@@ -9,12 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
-      <div id="navbar-container">
+    <div id="sabia-widget-container">
 
-      </div>
+    </div>
+
+    <div id="navbar-container">
+
+    </div>
 
     <section class="hero" id="hero-section">
         <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2000&auto=format&fit=crop"
@@ -51,21 +56,21 @@
                     </div>
 
                     <div class="calendar-days" id="calendar-days">
-                      
+
                     </div>
                 </div>
 
                 <div class="event-card" id="main-event-card">
-                    
+
                 </div>
             </div>
         </div>
     </main>
 
-  
-      <div id="footer-container">
 
-      </div>
+    <div id="footer-container">
+
+    </div>
 
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal">
@@ -106,7 +111,7 @@
                     </div>
                 </div>
 
-    
+
                 <div class="modal-step" id="step-2">
                     <div class="seats-container">
                         <div class="screen">
@@ -114,7 +119,7 @@
                         </div>
 
                         <div class="seats-grid" id="seats-grid">
-                            
+
                         </div>
 
                         <div class="seat-legend">
@@ -138,7 +143,7 @@
                     </div>
                 </div>
 
-          
+
                 <div class="modal-step" id="step-3">
                     <div class="success-container">
                         <div class="qrcode-container">
@@ -184,7 +189,7 @@
     <script src="../js/template.js"></script>
 
     <script>
-        
+
         const EVENTS = [
             {
                 id: 1,
@@ -212,7 +217,7 @@
             }
         ];
 
-        
+
         let currentEventId = 1;
         let modalStep = 1;
         let selectedNeedType = null;
@@ -220,14 +225,14 @@
         const rows = ['A', 'B', 'C', 'D'];
         const cols = [1, 2, 3, 4, 5, 6, 7, 8];
 
-        
+
         document.addEventListener('DOMContentLoaded', function () {
             renderCalendar();
             renderMainEvent();
             setupEventListeners();
         });
 
-        
+
         function setupEventListeners() {
             // Botão do hero
             document.getElementById('hero-button').addEventListener('click', function () {
