@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIRA | Filmes em Destaque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <link rel="stylesheet" href="/css/filmes.css"> 
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+    <div id="sabia-widget-container">
+
+    </div>
+
+    <header class="main-header">
+        <div class="logo">MIRA</div>
+
+        <nav class="main-nav">
+            <ul class="main-nav-links">
+                <li><a href="/pages/filmes.html">Filmes</a></li>
+                <li><a href="/pages/series.html">Séries</a></li>
+                <li><a href="/pages/documentarios.html">Documentários</a></li>
+                <li><a href="#">Curtas-Metragens</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar no catálogo...">
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section class="featured-slider">
+            
+            <div class="featured-item big">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/furia-estrada.jpg" alt="Filme em Destaque 1" class="featured-img"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Unsplash - ação) -->
+                <!-- <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="A Fúria da Estrada" class="featured-img"> -->
+                
+                <!-- EXEMPLO 3: Imagem da internet (Pexels - carro) -->
+                <img src="https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop" alt="A Fúria da Estrada" class="featured-img">
+                
+                <div class="featured-info">
+                    <span class="featured-category">AÇÃO | MAIS VISTO</span>
+                    <h2 class="featured-title">A Fúria da Estrada</h2>
+                    <p class="featured-description">Nesta corrida cheia de adrenalina, um ex-piloto de elite deve proteger sua família de um sindicato criminoso internacional. Uma aventura que não dá trégua.</p>
+                    <div class="featured-actions">
+                        <button class="btn-primary-feature"><i class="fas fa-play"></i> Assistir</button>
+                        <button class="btn-secondary-feature"><i class="fas fa-plus"></i> Minha Lista</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-item small">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/lamento-mar.jpg" alt="O Lamento do Mar" class="featured-img"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Pexels - mar) -->
+                <img src="https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&w=400&h=450&fit=crop" alt="O Lamento do Mar" class="featured-img">
+                
+                <div class="featured-info">
+                    <span class="featured-category">DRAMA</span>
+                    <h2 class="featured-title">O Lamento do Mar</h2>
+                    <p class="featured-description">Acompanhe a saga de um pescador que precisa enfrentar o mar e seu passado para salvar sua comunidade.</p>
+                </div>
+            </div>
+
+            <div class="featured-item small">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/anomalia-z.jpg" alt="Anomalia Z" class="featured-img"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Unsplash - ficção científica) -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Anomalia Z" class="featured-img">
+                
+                <div class="featured-info">
+                    <span class="featured-category">FICÇÃO</span>
+                    <h2 class="featured-title">Anomalia Z</h2>
+                    <p class="featured-description">Cientistas descobrem uma falha na realidade que ameaça toda a existência.</p>
+                </div>
+            </div>
+
+        </section>
+        
+        <h1 class="section-title">Em Alta Agora</h1>
+        
+        <section class="movie-grid">
+            <!-- FILME 1: Horizonte Perdido -->
+            <div class="movie-card">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/horizonte-perdido.jpg" alt="Horizonte Perdido" class="movie-poster"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Aventura) -->
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Horizonte Perdido" class="movie-poster">
+                
+                <div class="card-info">
+                    <h2 class="movie-title">Horizonte Perdido</h2>
+                    <p class="movie-meta">2024 | Aventura</p>
+                    <div class="card-bottom">
+                        <div class="rating">9.1</div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILME 2: Cidade Silenciosa -->
+            <div class="movie-card">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/cidade-silenciosa.jpg" alt="Cidade Silenciosa" class="movie-poster"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Suspense) -->
+                <img src="https://images.pexels.com/photos/1629236/pexels-photo-1629236.jpeg?auto=compress&cs=tinysrgb&w=300&h=450&fit=crop" alt="Cidade Silenciosa" class="movie-poster">
+                
+                <div class="card-info">
+                    <h2 class="movie-title">Cidade Silenciosa</h2>
+                    <p class="movie-meta">2023 | Suspense</p>
+                    <div class="card-bottom">
+                        <div class="rating">7.5</div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FILME 3: Noite Estrelada -->
+            <div class="movie-card">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/noite-estrelada.jpg" alt="Noite Estrelada" class="movie-poster"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Romance) -->
+                <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Noite Estrelada" class="movie-poster">
+                
+                <div class="card-info">
+                    <h2 class="movie-title">Noite Estrelada</h2>
+                    <p class="movie-meta">2023 | Romance</p>
+                    <div class="card-bottom">
+                        <div class="rating">8.2</div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FILME 4: Ecos do Passado -->
+            <div class="movie-card">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/ecos-passado.jpg" alt="Ecos do Passado" class="movie-poster"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Drama) -->
+                <img src="https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&w=300&h=450&fit=crop" alt="Ecos do Passado" class="movie-poster">
+                
+                <div class="card-info">
+                    <h2 class="movie-title">Ecos do Passado</h2>
+                    <p class="movie-meta">2024 | Drama</p>
+                    <div class="card-bottom">
+                        <div class="rating">8.7</div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FILME 5: A Última Fronteira -->
+            <div class="movie-card">
+                <!-- EXEMPLO 1: Imagem local -->
+                <!-- <img src="imagens/ultima-fronteira.jpg" alt="A Última Fronteira" class="movie-poster"> -->
+                
+                <!-- EXEMPLO 2: Imagem da internet (Ficção Científica) -->
+                <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="A Última Fronteira" class="movie-poster">
+                
+                <div class="card-info">
+                    <h2 class="movie-title">A Última Fronteira</h2>
+                    <p class="movie-meta">2024 | Ficção Científica</p>
+                    <div class="card-bottom">
+                        <div class="rating">9.0</div>
+                        <button class="btn-details">Ver Detalhes</button>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+    
+    <script src="js/script.js"></script>
+    <script src="/js/template.js"></script>
+</body>
+</html>
