@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>MIRA</title>
+</head>
+
+<body>
+    <div id="sabia-widget-container">
+
+    </div>
+
+    <header class="main-header" id="main-header">
+        <div class="logo">
+            <img src="./assets/img/image.png" alt="">
+        </div>
+    </header>
+
+
+    <nav class="side-nav" id="sideNav">
+        <a href="#inicio" class="nav-item" data-tooltip="Início">
+            <i class="fas fa-home nav-icon"></i>
+        </a>
+        <a href="#experience" class="nav-item" data-tooltip="Experiência">
+            <i class="fas fa-star nav-icon"></i>
+        </a>
+        <a href="#audience" class="nav-item" data-tooltip="Público">
+            <i class="fas fa-users nav-icon"></i>
+        </a>
+        <a href="#accessibility" class="nav-item" data-tooltip="Acessibilidade">
+            <i class="fas fa-universal-access nav-icon"></i>
+        </a>
+        <a href="#catalog" class="nav-item" data-tooltip="Catálogo">
+            <i class="fas fa-film nav-icon"></i>
+        </a>
+        <a href="#sabia" class="nav-item" data-tooltip="Sabiá">
+            <i class="fas fa-robot nav-icon"></i>
+        </a>
+        <a href="#plans" class="nav-item" data-tooltip="Planos">
+            <i class="fas fa-tags nav-icon"></i>
+        </a>
+    </nav>
+
+    <section class="hero-section" id="inicio">
+        <div class="hero-content-container">
+            <div class="hero-text">
+                <h1 class="hero-title">O MELHOR DO CINEMA <span>BRASILEIRO</span></h1>
+                <p class="hero-subtitle">Assista a produções nacionais únicas, conheça o melhor do audiovisual nacional
+                    e desfrute a beleza que é esse cinema!</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="heroLoginBtn"
+                        onclick="window.location.href='./pages/catalog.html'">Entrar</button>
+                    <button class="btn-secondary" id="planosBtn">Conheça os Planos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-experience" id="experience">
+        <h2 class="section-title">EXPERIENCIA MIRA DE CINEMA</h2>
+        <div class="experience-card-container">
+            <div class="experience-card">
+                <i class="fas fa-film"></i>
+                <h3>Conteudo Exclusivo</h3>
+                <p>Filmes, documentários e series exclusivas</p>
+            </div>
+            <div class="experience-card">
+                <i class="fas fa-universal-access"></i>
+                <h3>Acessibilidade Garantida</h3>
+                <p>Recursos de acessibilidade para que todos possam desfrutar do cinema brasileiro</p>
+            </div>
+            <div class="experience-card">
+                <i class="fas fa-users"></i>
+                <h3>Comunidade Ativa</h3>
+                <p>Conecte-se com outros amantes do cinema brasileiro</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-audience" id="audience">
+        <h2 class="section-title">NOSSO PÚBLICO</h2>
+        <div class="audience-container">
+            <div class="audience-card" id="card-spectator">
+                <div>
+                    <h3 class="audience-title">PARA ESPECTADORES</h3>
+                    <p class="audience-text">
+                        Descubra o melhor do cinema nacional com curadoria de especialistas. Assista a filmes e
+                        documentários únicos.
+                    </p>
+                </div>
+                <button class="btn-clean">Ver Catálogo</button>
+            </div>
+
+            <div class="audience-card" id="card-producer">
+                <div>
+                    <h3 class="audience-title">PARA PRODUTORES</h3>
+                    <p class="audience-text">
+                        Publique o seu trabalho e receba monetização justa. Conecte-se a um público apaixonado e aumente
+                        a visibilidade das suas produções.
+                    </p>
+                </div>
+                <button class="btn-clean">Saiba Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-accessibility" id="accessibility">
+        <div class="accessibility-content-container">
+            <h2 class="section-title">ACESSÍVEL PARA TODOS</h2>
+            <p class="accessibility-subtitle">
+                A acessibilidade é a nossa prioridade. Oferecemos recursos exclusivos para que o cinema nacional possa
+                ser desfrutado por todas as pessoas.
+            </p>
+            <div class="accessibility-cards">
+                <div class="access-card">
+                    <i class="fas fa-closed-captioning"></i>
+                    <h3 class="card-title">Legendas Aprimoradas</h3>
+                    <p>Legendas adaptadas para deficientes auditivos, incluindo descrição de sons e emoções.</p>
+                </div>
+                <div class="access-card">
+                    <i class="fas fa-assistive-listening-systems"></i>
+                    <h3 class="card-title">Audiodescrição</h3>
+                    <p>Narrações detalhadas para deficientes visuais, garantindo a compreensão completa da cena.</p>
+                </div>
+                <div class="access-card">
+                    <i class="fas fa-sign-language"></i>
+                    <h3 class="card-title">LIBRAS</h3>
+                    <p>Seleção de filmes com tradução em Língua Brasileira de Sinais embutida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-catalog" id="catalog">
+        <h2 class="section-title">UM CATÁLOGO ÚNICO</h2>
+        <div class="catalog-cards">
+            <div class="catalog-card"
+                style="background-image: url('https://unsplash.com/pt-br/fotografias/um-homem-segurando-uma-camera-na-frente-de-seu-rosto-M3XscQcYY1I')">
+                <span>DOCUMENTÁRIOS</span>
+            </div>
+            <div class="catalog-card"
+                style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>FILMES</span>
+            </div>
+            <div class="catalog-card"
+                style="background-image: url('https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>SÉRIES</span>
+            </div>
+            <div class="catalog-card"
+                style="background-image: url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>CURTAS</span>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">O QUE VOCÊ ENCONTRA:</h3>
+        <div class="resource-cards">
+            <div class="resource-card"
+                style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>Produções Independentes</span>
+            </div>
+            <div class="resource-card"
+                style="background-image: url('https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>Clássicos do Cinema Nacional</span>
+            </div>
+            <div class="resource-card"
+                style="background-image: url('https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                <span>Conteúdo Regional</span>
+            </div>
+            <div class="resource-card"
+                style="background-image: url('https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')">
+                <span>Festivais Exclusivos</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-sabia" id="sabia">
+        <div class="sabia-container">
+            <h2 class="sabia-title">SABIÁ: SEU GUIA DE CINEMA</h2>
+            <p class="sabia-text">
+                Conheça o Sabiá, a nossa inteligência artificial que te ajuda a mergulhar nas histórias. Ele fornece
+                informações contextuais, entrevistas com diretores e curiosidades sobre o elenco em tempo real.
+            </p>
+            <div class="sabia-cta">
+                <button class="btn-primary">Conheça o Sabiá</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-plans" id="plans">
+        <div class="container">
+            <h2 class="section-title">NOSSOS PLANOS</h2>
+            <div class="plan-cards">
+                <div class="plan-card">
+                    <div class="card-header">
+                        <div class="plan-icon"><i class="fas fa-film"></i></div>
+                        <h3>FREEMIUM</h3>
+                    </div>
+                    <p class="plan-description">Acesso básico ao catálogo MIRA</p>
+                    <ul class="plan-features">
+                        <li>Catálogo limitado</li>
+                        <li>Acesso a conteúdo selecionado</li>
+                    </ul>
+                    <p class="price">Grátis</p>
+                    <p class="price-period">para sempre</p>
+                    <button class="btn-clean" style="align-self: center;">Experimentar</button>
+                </div>
+                <div class="plan-card featured">
+                    <div class="card-header">
+                        <div class="plan-icon"><i class="fas fa-crown"></i></div>
+                        <h3>PREMIUM</h3>
+                    </div>
+                    <p class="plan-description">Experiência completa MIRA</p>
+                    <ul class="plan-features">
+                        <li>Acesso ilimitado a todo o catálogo</li>
+                        <li>Eventos exclusivos (cinema ao ar livre)</li>
+                        <li>Uso completo do Sabiá (IA)</li>
+                    </ul>
+                    <p class="price">R$ 29,90</p>
+                    <p class="price-period">por mês</p>
+                    <button class="btn-clean" style="align-self: center;">Assinar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./assets/img/image.png" alt="MIRA">
+            </div>
+            <div class="footer-links">
+                <a href="#experience">Experiência</a>
+                <a href="#audience">Público</a>
+                <a href="#accessibility">Acessibilidade</a>
+                <a href="#catalog">Catálogo</a>
+                <a href="#sabia">Sabiá</a>
+                <a href="#plans">Planos</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>© 2025 MIRA. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Atualizar navegação ativa baseada na posição de scroll
+            updateActiveNav();
+        });
+
+        // Atualizar navegação ativa
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-item');
+
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adicionar funcionalidade aos botões
+        // document.getElementById('heroLoginBtn').addEventListener('click', function() {
+        //     alert('Redirecionando para a página de login...');
+        // });
+
+        // document.getElementById('planosBtn').addEventListener('click', function() {
+        //     // Scroll suave para a seção de planos
+        //     const planosSection = document.getElementById('planos');
+        //     if (planosSection) {
+        //         window.scrollTo({
+        //             top: planosSection.offsetTop - 80,
+        //             behavior: 'smooth'
+        //         });
+        //     }
+        // });
+
+        // Inicializar navegação ativa
+        updateActiveNav();
+
+
+    </script>
+
+</body>
+
+</html>

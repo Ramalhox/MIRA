@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - MiraCine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="navbar-container">
+
+    </div>
+
+    <div id="sabia-widget-container">
+
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="profile-page">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                        alt="Clara Mendes" id="profile-avatar">
+                    <button class="avatar-edit">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+
+                <div class="profile-info">
+                    <h1 class="profile-name">
+                        <span id="profile-name">Clara Mendes</span>
+                        <span class="profile-badge badge-premium" id="profile-plan">Premium</span>
+                        <span class="profile-badge badge-producer" id="producer-badge">Produtor</span>
+                    </h1>
+                    <p class="profile-email" id="profile-email">clara.mendes@email.com</p>
+                    <p class="profile-email">Membro desde <span id="member-since">2023</span></p>
+
+                    <div class="profile-actions">
+                        <a href="producer_profile.html" class="profile-btn btn-primary" id="producer-dashboard-btn">
+                            <i class="fas fa-chart-bar"></i>
+                            Acessar Painel do Produtor
+                        </a>
+                        <button class="profile-btn btn-secondary" id="logout-btn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </button>
+                    </div>
+                </div>
+
+                <div class="profile-sidebar">
+                    <h3 class="sidebar-title">
+                        <i class="fas fa-universal-access"></i>
+                        Preferências de Acesso
+                    </h3>
+                    <p class="accessibility-type" id="accessibility-type">Deficiência Auditiva</p>
+                    <p class="accessibility-status">Perfil Ativo</p>
+
+                    <ul class="accessibility-features" id="accessibility-features">
+
+                    </ul>
+
+                    <a href="config.html" class="profile-btn btn-secondary" id="change-accessibility-btn">
+                        Alterar necessidades
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2 class="section-title">Continuar Assistindo</h2>
+                <div class="content-grid" id="continue-watching">
+
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2 class="section-title">Minha Lista</h2>
+                <div class="content-grid" id="my-list">
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+
+    <div id="footer-container">
+
+    </div>
+
+    <script src="../js/template.js"></script>
+
+    <script>
+        // Dados específicos da página profile
+        const USER_DATA = {
+            name: "Clara Mendes",
+            email: "clara.mendes@email.com",
+            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+            plan: "Premium",
+            isProducer: true,
+            memberSince: "2023",
+            accessibility: {
+                type: "hearing",
+                label: "Deficiência Auditiva",
+                features: ["Legendas Descritivas (CC) Automáticas", "Intérprete de LIBRAS Overlay"]
+            },
+            history: [
+                { id: 101, title: "Bacurau", progress: 85, image: "https://images.unsplash.com/photo-1533929736458-ca588d080e81?q=80&w=400&auto=format&fit=crop" },
+                { id: 102, title: "Central do Brasil", progress: 40, image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400&auto=format&fit=crop" },
+                { id: 103, title: "Cidade de Deus", progress: 100, image: "https://images.unsplash.com/photo-1478720568477-152d9b164e63?q=80&w=400&auto=format&fit=crop" },
+                { id: 104, title: "Que Horas Ela Volta?", progress: 20, image: "https://images.unsplash.com/photo-1512113569124-0a6f477e6531?q=80&w=400&auto=format&fit=crop" }
+            ],
+            myList: [
+                { id: 201, title: "O Homem que Copiava", image: "https://images.unsplash.com/photo-1596727147705-54a9d6ed27e6?q=80&w=400&auto=format&fit=crop" },
+                { id: 202, title: "Aquarius", image: "https://images.unsplash.com/photo-1531259683007-016a7b628fc3?q=80&w=400&auto=format&fit=crop" },
+                { id: 203, title: "Tropa de Elite", image: "https://images.unsplash.com/photo-1512070679279-8988d32161be?q=80&w=400&auto=format&fit=crop" },
+                { id: 204, title: "O Som ao Redor", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400&auto=format&fit=crop" }
+            ]
+        };
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function () {
+            renderProfile();
+            setupEventListeners();
+        });
+
+        function renderProfile() {
+            // Informações básicas
+            document.getElementById('profile-name').textContent = USER_DATA.name;
+            document.getElementById('profile-email').textContent = USER_DATA.email;
+            document.getElementById('member-since').textContent = USER_DATA.memberSince;
+            document.getElementById('profile-plan').textContent = USER_DATA.plan;
+
+            // Badge do produtor
+            if (!USER_DATA.isProducer) {
+                document.getElementById('producer-badge').style.display = 'none';
+                document.getElementById('producer-dashboard-btn').style.display = 'none';
+            }
+
+            // Acessibilidade
+            document.getElementById('accessibility-type').textContent = USER_DATA.accessibility.label;
+
+            const featuresList = document.getElementById('accessibility-features');
+            featuresList.innerHTML = '';
+            USER_DATA.accessibility.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+                featuresList.appendChild(li);
+            });
+
+            // Continuar assistindo
+            const continueWatching = document.getElementById('continue-watching');
+            continueWatching.innerHTML = '';
+            USER_DATA.history.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'content-card';
+                card.innerHTML = `
+            <div class="card-image">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="card-progress">
+                <div class="card-progress-bar" style="width: ${item.progress}%"></div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${item.title}</h3>
+                <p class="card-meta">Restam ${100 - item.progress} min</p>
+            </div>
+        `;
+                card.addEventListener('click', () => {
+                    alert(`Reproduzindo: ${item.title}`);
+                });
+                continueWatching.appendChild(card);
+            });
+
+            // Minha lista
+            const myList = document.getElementById('my-list');
+            myList.innerHTML = '';
+            USER_DATA.myList.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'content-card';
+                card.innerHTML = `
+            <div class="card-image">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${item.title}</h3>
+                <p class="card-meta">Na sua lista</p>
+            </div>
+        `;
+                card.addEventListener('click', () => {
+                    alert(`Reproduzindo: ${item.title}`);
+                });
+                myList.appendChild(card);
+            });
+        }
+
+        function setupEventListeners() {
+            // Botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function () {
+                alert('Funcionalidade de logout em desenvolvimento!');
+            });
+
+            // Botão editar avatar
+            document.querySelector('.avatar-edit').addEventListener('click', function () {
+                alert('Funcionalidade de edição de avatar em desenvolvimento!');
+            });
+        }
+
+    </script>
+</body>
+
+</html>

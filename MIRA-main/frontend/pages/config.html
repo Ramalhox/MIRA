@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - MiraCine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="sabia-widget-container">
+
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar-container">
+
+      </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="settings-page">
+            <h1 class="settings-title">Configurações</h1>
+
+            <div class="settings-grid">
+                <div class="settings-sidebar">
+                    <button class="settings-tab" data-tab="general">
+                        <i class="fas fa-desktop"></i>
+                        Geral
+                    </button>
+                    <button class="settings-tab active" data-tab="accessibility">
+                        <i class="fas fa-universal-access"></i>
+                        Acessibilidade
+                    </button>
+                    <button class="settings-tab" data-tab="account">
+                        <i class="fas fa-shield-alt"></i>
+                        Conta e Privacidade
+                    </button>
+                </div>
+
+                <div class="settings-content">
+                    <!-- General Settings -->
+                    <div class="settings-section" id="general-settings">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <div class="section-header-text">
+                                <h2>Configurações de Reprodução</h2>
+                                <p>Personalize sua experiência de visualização</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Reprodução Automática</h4>
+                                    <p>Iniciar o próximo episódio ou vídeo sugerido automaticamente.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="autoplay-toggle" checked>
+                                    <label for="autoplay-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Downloads somente via Wi-Fi</h4>
+                                    <p>Economize seus dados móveis.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="wifi-toggle" checked>
+                                    <label for="wifi-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Qualidade de Vídeo</h4>
+                                    <p>Selecione a qualidade padrão para reprodução.</p>
+                                </div>
+                                <select class="settings-select" id="video-quality">
+                                    <option>Automático (Recomendado)</option>
+                                    <option>Alta (4K/1080p)</option>
+                                    <option>Economia de Dados (480p)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility Settings -->
+                    <div class="settings-section active" id="accessibility-settings">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <div class="section-header-text">
+                                <h2>Preferências de Acessibilidade</h2>
+                                <p>Personalize sua experiência para atender suas necessidades.</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3 class="settings-group-title">Auditiva</h3>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Intérprete de LIBRAS (Avatar 3D)</h4>
+                                    <p>Exibir avatar virtual de LIBRAS no canto inferior direito.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="libras-toggle" checked>
+                                    <label for="libras-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Legendas Descritivas (CC)</h4>
+                                    <p>Incluir descrições de sons ambiente e música.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="cc-toggle" checked>
+                                    <label for="cc-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3 class="settings-group-title">Visual</h3>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Audiodescrição Automática</h4>
+                                    <p>Ativar faixa de áudio descritiva quando disponível.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="audiodesc-toggle">
+                                    <label for="audiodesc-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Alto Contraste</h4>
+                                    <p>Aumentar o contraste da interface e das legendas.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="contrast-toggle">
+                                    <label for="contrast-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Tamanho da Fonte</h4>
+                                    <p>Ajuste o tamanho das legendas e da interface.</p>
+                                </div>
+                                <div class="settings-buttons">
+                                    <button class="settings-button" data-font-size="small">Pequeno</button>
+                                    <button class="settings-button active" data-font-size="medium">Médio</button>
+                                    <button class="settings-button" data-font-size="large">Grande</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Settings -->
+                    <div class="settings-section" id="account-settings">
+                        <div class="section-header">
+                            <div class="section-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="section-header-text">
+                                <h2>Conta</h2>
+                                <p>Gerencie suas informações e privacidade</p>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <div class="settings-item">
+                                <div class="settings-item-info">
+                                    <h4>Notificações por Email</h4>
+                                    <p>Receba atualizações sobre novos conteúdos e eventos.</p>
+                                </div>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="email-toggle" checked>
+                                    <label for="email-toggle" class="toggle-slider"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="danger-button" id="delete-account-btn">
+                            Excluir Conta
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+      <div id="footer-container">
+
+      </div>
+
+    <script src="../js/template.js"></script>
+
+    <script>
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function () {
+            setupSettings();
+        });
+
+        function setupSettings() {
+            // Configurações - abas
+            document.querySelectorAll('.settings-tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+                    switchSettingsTab(tabId);
+                });
+            });
+
+            // Configurações - botões de tamanho de fonte
+            document.querySelectorAll('.settings-button[data-font-size]').forEach(button => {
+                button.addEventListener('click', function () {
+                    const fontSize = this.getAttribute('data-font-size');
+                    document.querySelectorAll('.settings-button[data-font-size]').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    alert(`Tamanho da fonte alterado para: ${fontSize}`);
+                });
+            });
+
+            // Botão de excluir conta
+            document.getElementById('delete-account-btn').addEventListener('click', function () {
+                if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
+                    alert('Conta excluída com sucesso!');
+                    // Redirecionar para a página inicial
+                    window.location.href = 'index.html';
+                }
+            });
+
+            // Toggles
+            document.querySelectorAll('.toggle-switch input').forEach(toggle => {
+                toggle.addEventListener('change', function () {
+                    console.log(`${this.id} alterado para: ${this.checked}`);
+                });
+            });
+
+            // Select de qualidade de vídeo
+            document.getElementById('video-quality').addEventListener('change', function () {
+                alert('Qualidade de vídeo alterada para: ' + this.value);
+            });
+        }
+
+        // Alternar abas de configurações
+        function switchSettingsTab(tabId) {
+            // Atualizar abas ativas
+            document.querySelectorAll('.settings-tab').forEach(tab => {
+                if (tab.getAttribute('data-tab') === tabId) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            // Atualizar seções
+            document.querySelectorAll('.settings-section').forEach(section => {
+                if (section.id === `${tabId}-settings`) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>
