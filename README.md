@@ -1,5 +1,5 @@
 # MIRA
-##Um olhar sobre o Brasil que você ainda não viu!##
+## *Um olhar sobre o Brasil que você ainda não viu!*
 
 A MIRA é uma plataforma de streaming focada exclusivamente em produções nacionais, criada para valorizar o cinema brasileiro e torná-lo acessível para todos.
 Nosso objetivo é aproximar o público de quem cria, oferecendo uma experiência inclusiva, intuitiva e totalmente imersiva.
