@@ -253,6 +253,7 @@
     margin-bottom: 100px;
     position: relative;
     overflow: visible;
+    border-radius: 10px;
 }
 
 .collection-text {
@@ -267,6 +268,7 @@
     line-height: 0.95;
     text-transform: uppercase;
     margin-bottom: 25px;
+    margin-left: 30px;
     color: #f0f0f0;
 }
 
@@ -292,6 +294,7 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: 0.3s;
+    margin-right: 25px;
 }
 
 .collection-link a:hover {
