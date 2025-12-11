@@ -23,7 +23,7 @@
     --valores-color: #F59E0B; /* Amarelo */
     
     /* Gradientes */
-    --gradient-primary: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    --gradient-primary: linear-gradient(135deg, #fa5f22 0%, #c73f09 100%);
     --gradient-missao: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
     --gradient-visao: linear-gradient(135deg, #10B981 0%, #059669 100%);
     --gradient-valores: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
@@ -278,19 +278,31 @@ body {
 .pilar-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--primary-color);
+    
 }
 
 .pilar-card.missao {
     border-top: 6px solid var(--missao-color);
 }
 
+.pilar-card.missao:hover {
+    border-color: #3B82F6;
+}
+
 .pilar-card.visao {
     border-top: 6px solid var(--visao-color);
 }
 
+.pilar-card.visao:hover {
+    border-color: #10B981;
+}
+
 .pilar-card.valores {
     border-top: 6px solid var(--valores-color);
+}
+
+.pilar-card.valores:hover {
+    border-color: #F59E0B;
 }
 
 .pilar-icon {
@@ -360,6 +372,13 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     margin-top: 40px;
+}
+
+.equipe-grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 10px;
 }
 
 .membro-card {
@@ -545,50 +564,6 @@ body {
 .rede-icon.linkedin { background: #0A66C2; }
 .rede-icon.youtube { background: #FF0000; }
 
-/* Footer */
-.main-footer {
-    background: var(--bg-dark);
-    padding: 50px 0;
-    margin-top: 100px;
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: var(--text-white);
-}
-
-.footer-copyright {
-    color: var(--text-gray);
-    font-size: 14px;
-}
 
 /* Responsividade */
 @media (max-width: 1200px) {
@@ -661,8 +636,4 @@ body {
         padding: 20px;
     }
     
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
 }
