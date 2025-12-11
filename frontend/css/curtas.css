@@ -1,46 +1,51 @@
 /* --- VARIÁVEIS DE COR PARA CURTAS-METRAGENS --- */
 :root {
     /* Tema Amarelo Principal */
-    --primary-color: #F59E0B; /* Amarelo âmbar */
+    --primary-color: #F59E0B;
+    /* Amarelo âmbar */
     --primary-dark: #D97706;
     --primary-light: #FBBF24;
     --primary-extra-light: #FCD34D;
-    
+
     /* Cores de fundo */
-    --bg-dark: #0A0A0A; /* Fundo do Header */
-    --bg-darker: #121212; /* Fundo do Body */
-    --bg-card: #1A1A1A; /* Fundo dos Cards */
+    --bg-dark: #0A0A0A;
+    /* Fundo do Header */
+    --bg-darker: #121212;
+    /* Fundo do Body */
+    --bg-card: #1A1A1A;
+    /* Fundo dos Cards */
     --bg-card-hover: #222222;
-    
+
     /* Cores de texto */
     --text-white: #FFFFFF;
     --text-gray: #A0A0A0;
     --text-light: #E0E0E0;
     --text-yellow: #F59E0B;
-    
+
     /* Cores auxiliares */
     --border-color: #2A2A2A;
-    --animation-color: #8B5CF6; /* Roxo para animação */
-    
+    --animation-color: #8B5CF6;
+    /* Roxo para animação */
+
     /* Gradientes */
     --gradient-primary: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
     --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
     --gradient-yellow-dark: linear-gradient(135deg, #B45309 0%, #92400E 100%);
     --gradient-animation: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-    
+
     /* Tipografia */
     --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    
+
     /* Sombras */
     --shadow-sm: 0 4px 6px rgba(245, 158, 11, 0.1);
     --shadow-md: 0 6px 12px rgba(245, 158, 11, 0.15);
     --shadow-lg: 0 12px 24px rgba(245, 158, 11, 0.2);
-    
+
     /* Transições */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
+
     /* Bordas arredondadas */
     --border-radius-sm: 4px;
     --border-radius-md: 8px;
@@ -113,7 +118,7 @@ body {
 }
 
 .main-nav {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     justify-content: center;
 }
@@ -142,7 +147,7 @@ body {
 .main-nav-links li a.active::after {
     content: '';
     position: absolute;
-    bottom: -5px; 
+    bottom: -5px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -258,7 +263,6 @@ body {
     margin-bottom: 20px;
     line-height: 1.6;
     opacity: 0.9;
-    
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -283,7 +287,8 @@ body {
     font-weight: 700;
 }
 
-.year-info, .festival-badge {
+.year-info,
+.festival-badge {
     color: var(--text-gray);
     font-size: 13px;
 }
@@ -296,7 +301,8 @@ body {
     padding-top: 15px;
 }
 
-.btn-primary-feature, .btn-secondary-feature {
+.btn-primary-feature,
+.btn-secondary-feature {
     padding: 12px 24px;
     border: none;
     border-radius: 6px;
@@ -409,7 +415,6 @@ body {
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 5px;
-    
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -516,7 +521,7 @@ body {
     font-size: 11px;
     font-weight: 700;
     z-index: 3;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .award-badge {
@@ -530,7 +535,7 @@ body {
     font-size: 11px;
     font-weight: 700;
     z-index: 3;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .trending-badge {
@@ -544,7 +549,7 @@ body {
     font-size: 12px;
     font-weight: 700;
     z-index: 3;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ------------------------------------------------------------------ */
@@ -556,11 +561,11 @@ body {
         grid-template-columns: 1.5fr 1fr 1fr;
         height: 400px;
     }
-    
+
     .featured-item.big .featured-title {
         font-size: 32px;
     }
-    
+
     .movie-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
@@ -570,21 +575,21 @@ body {
     .main-header {
         padding: 15px 20px;
     }
-    
+
     .featured-slider {
         grid-template-columns: 1fr;
         height: auto;
         gap: 15px;
     }
-    
+
     .featured-item {
         height: 350px;
     }
-    
+
     .featured-item.big .featured-title {
         font-size: 28px;
     }
-    
+
     .container {
         padding: 15px;
     }
@@ -595,56 +600,56 @@ body {
         flex-wrap: wrap;
         gap: 15px;
     }
-    
+
     .logo {
         order: 1;
     }
-    
+
     .search-bar {
         order: 2;
         width: 100%;
     }
-    
+
     .search-bar input {
         width: 100%;
     }
-    
+
     .main-nav {
         order: 3;
         flex-basis: 100%;
     }
-    
+
     .main-nav-links {
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .featured-slider {
         margin-bottom: 40px;
     }
-    
+
     .featured-item {
         height: 300px;
     }
-    
+
     .featured-info {
         padding: 20px;
     }
-    
+
     .featured-item.big .featured-title {
         font-size: 24px;
     }
-    
+
     .featured-title {
         font-size: 20px;
     }
-    
+
     .movie-grid {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
         gap: 20px;
     }
-    
+
     .movie-poster {
         height: 250px;
     }
@@ -654,22 +659,23 @@ body {
     .logo {
         font-size: 28px;
     }
-    
+
     .featured-actions {
         flex-direction: column;
         gap: 10px;
     }
-    
-    .btn-primary-feature, .btn-secondary-feature {
+
+    .btn-primary-feature,
+    .btn-secondary-feature {
         min-width: 100%;
         justify-content: center;
     }
-    
+
     .movie-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .movie-title {
         font-size: 16px;
         min-height: 40px;
@@ -685,6 +691,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -710,11 +717,11 @@ body {
     .mobile-menu-toggle {
         display: block;
     }
-    
+
     .main-nav {
         display: none;
     }
-    
+
     .main-nav.active {
         display: block;
         position: absolute;
