@@ -1,4 +1,3 @@
-// Função para carregar templates
 async function loadTemplate(elementId, templatePath) {
     try {
         const response = await fetch(templatePath);
@@ -60,11 +59,6 @@ async function loadSabiaWidget() {
     }
 }
 
-// Configurações da navbar (mantenha seu código atual)
-function setupNavbar() {
-    // ... seu código atual da navbar ...
-}
-
 // Carregar templates na página
 document.addEventListener('DOMContentLoaded', async () => {
     // Lista de templates para carregar
@@ -89,8 +83,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('Todos os templates carregados!');
 });
 
-// Restante do seu código template.js permanece igual...
-
 // Configurar navbar após carregar
 function setupNavbar() {
     // Destacar a página atual
@@ -102,6 +94,35 @@ function setupNavbar() {
             icon.classList.add('active');
         }
     });
+
+    const userAvatarBtn = document.getElementById('user-avatar-btn');
+    const userDropdown = document.getElementById('user-dropdown');
+    
+    if (userAvatarBtn && userDropdown) {
+
+        userDropdown.style.display = 'none';
+
+        // Alternar dropdown ao clicar no avatar
+        userAvatarBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            // Fechar menu mobile se estiver aberto
+            closeMobileMenu();
+            
+            // Alternar visibilidade do dropdown
+            const isVisible = userDropdown.style.display === 'block';
+            userDropdown.style.display = isVisible ? 'none' : 'block';
+        });
+
+        userDropdown.addEventListener('click', (e) => {
+            if (e.target.closest('a') && !e.target.closest('.logout-btn')) {
+                setTimeout(() => {
+                    userDropdown.style.display = 'none';
+                }, 200);
+            }
+        });
+    }
 
     // busca
     const searchInput = document.querySelector('.search-input');
@@ -139,10 +160,6 @@ function setupNavbar() {
         mobileMenuClose.addEventListener('click', closeMobileMenu);
     }
 
-    if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-    }
-
     // busca mobile
     const mobileSearchBtn = document.querySelector('.mobile-search-btn');
     const mobileSearchInput = document.querySelector('.mobile-search-input');
@@ -171,7 +188,7 @@ function setupNavbar() {
             if (confirm('Tem certeza que deseja sair?')) {
                 // implementar o logout
                 alert('Logout realizado!');
-                window.location.href = 'landing.html';
+                window.location.href = '/index.html';
             }
         });
     });
@@ -191,15 +208,6 @@ function closeMobileMenu() {
     }
 
     document.body.style.overflow = '';
-}
-
-// Função de busca
-function performSearch(query) {
-    console.log('Buscando por:', query);
-
-    // window.location.href = search.html?q=${encodeURIComponent(query)};
-
-    // window.location.href = catalog.html?search=${encodeURIComponent(query)};
 }
 
 // Carregar templates quando a página carregar

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Mira (Final)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- VARIÁVEIS DE CONTROLE (Desktop) --- */
+        :root {
+            --split-point: 42%;             /* Largura do Painel Laranja */
+            --text-left-pos: 34vw;          /* Posição horizontal do texto MIRA */
+            --text-size: 26vw;              /* Tamanho da fonte MIRA */
+            --main-font: 'Irish Grover', cursive;
+            --orange-color: #E6572E;
+            --gray-color: #E6E6E6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--main-font);
+            background-color: var(--gray-color);
+            overflow-x: hidden;
+        }
+
+        .hero-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* --- PAINEL DIREITO (CINZA) --- */
+        .right-panel {
+            width: 100%; 
+            height: 100%;
+            background-color: var(--gray-color);
+            position: relative;
+            /* Alinha todos os itens internos à esquerda (Busca) */
+            align-items: flex-start; 
+            padding: 40px;
+        }
+
+        /* --- PAINEL ESQUERDO (LARANJA) --- */
+        .left-panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: var(--split-point); 
+            height: 100%;
+            background-color: var(--orange-color);
+            z-index: 10;
+            overflow: hidden; 
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Garante que tudo dentro do painel laranja esteja à esquerda */
+            align-items: flex-start; 
+        }
+
+        /* --- ELEMENTOS DE UI --- */
+        .header-top { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            width: 100%; 
+            /* Alinhamento dos itens de topo à esquerda */
+            justify-content: flex-start; 
+        }
+
+        /* ... (Estilos de menu e tagline permanecem os mesmos) ... */
+        .menu-icon { width: 30px; height: 20px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
+        .menu-icon span { display: block; height: 2px; width: 100%; background-color: white; }
+        .brand-tagline { 
+            font-family: sans-serif; 
+            font-size: 0.9rem; 
+            letter-spacing: 0.5px; 
+            color: white; 
+            white-space: nowrap;
+        }
+
+        .main-message {
+            font-style: normal;
+            font-size: clamp(2rem, 3.2vw, 4rem); 
+            line-height: 1.1;
+            font-weight: 400;
+            color: white;
+            position: relative;
+            z-index: 20;
+            margin-top: auto; 
+            margin-bottom: 40px; /* Mais espaço para o MIRA não encostar */
+            /* Garante o alinhamento à esquerda (já está por padrão, mas reforçamos) */
+            text-align: left; 
+        }
+
+        .search-container { position: relative; z-index: 5; width: 100%;}
+        .search-input {
+            background-color: rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 10px 15px;
+            width: 250px;
+            border-radius: 4px;
+            outline: none;
+            font-family: sans-serif;
+            font-size: 1rem;
+        }
+
+        /* --- O TEXTO MIRA DUPLICADO --- */
+        .mira-text {
+            font-size: var(--text-size);
+            font-weight: 400;
+            line-height: 0.8;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: var(--text-left-pos); 
+            display: flex;
+            flex-direction: column;
+            pointer-events: none;
+            user-select: none;
+            text-align: left; /* Garante que o texto MIRA não se alinhe no centro */
+        }
+
+        .mira-text span { display: block; }
+        .mira-black { color: #000; z-index: 1; }
+        .mira-white { color: #fff; }
+
+
+        /* =========================================
+           RESPONSIVIDADE (MOBILE - CORREÇÃO FINAL)
+        ========================================= */
+        @media (max-width: 768px) {
+            
+            /* Novas variáveis para Mobile */
+            :root {
+                --split-point: 60%;             /* Laranja ocupa 60% da largura */
+                --text-left-pos: 45vw;          /* Posição do texto MIRA */
+                --text-size: 45vw;              /* Texto MIRA (maior no mobile) */
+            }
+
+            .hero-wrapper {
+                min-height: 100vh;
+                display: block; 
+                position: static; 
+            }
+
+            .left-panel {
+                width: var(--split-point);
+                height: 100vh;
+                position: absolute; 
+                padding: 15px;
+                justify-content: space-between;
+                /* Corrigido para garantir que o painel ocupe a altura total */
+                min-height: 100%; 
+            }
+
+            .right-panel {
+                width: calc(100% - var(--split-point));
+                height: 100vh;
+                margin-left: var(--split-point); 
+                padding: 15px;
+                
+                /* Posicionamento do campo de busca no topo (Alinhamento Esquerdo) */
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            
+            .search-input {
+                width: 100%;
+                font-size: 0.8rem;
+                padding: 8px 10px;
+            }
+            
+            /* --- Ajustes no Conteúdo Mobile --- */
+
+            .main-message {
+                font-size: 1.2rem; 
+                line-height: 1.2;
+                margin-top: auto; 
+                margin-bottom: 15px; /* Reduzido o espaço para caber */
+            }
+            
+            .header-top {
+                margin-top: 15px;
+            }
+
+            .brand-tagline {
+                font-size: 0.7rem;
+            }
+
+            /* --- Ajuste do Texto MIRA --- */
+            .mira-text {
+                top: 50%;
+                transform: translateY(-50%);
+                left: var(--text-left-pos); 
+            }
+        }
+        
+        /* Ajustes menores para telas muito pequenas */
+        @media (max-width: 480px) {
+             :root {
+                --split-point: 65%; 
+                --text-left-pos: 50vw;
+                --text-size: 50vw; 
+            }
+            .main-message { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-wrapper">
+        
+        <div class="left-panel">
+            <div class="header-top">
+                <div class="menu-icon">
+                    <span></span><span></span><span></span>
+                </div>
+                <span class="brand-tagline">O streaming do seu gosto</span>
+            </div>
+
+            <h1 class="main-message">
+                UM OLHAR<br>
+                SOBRE O BRASIL<br>
+                QUE VOCÊ<br>
+                AINDA NÃO VIU!
+            </h1>
+
+            <div class="mira-text mira-white">
+                <span>MI</span>
+                <span>RA</span>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar...">
+            </div>
+
+            <div class="mira-text mira-black">
+                <span>MI</span>
+                <span>RA</span>
+            </div>
+        </div>
+
+    </div>
+
+    <section style="padding: 50px; text-align: center; max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-family: var(--main-font); font-size: 2rem; margin-bottom: 20px; color: #333;">Nossa Missão, Visão e Valores</h2>
+        <p style="font-family: sans-serif; font-size: 1rem; color: #666;">Detalhes do resto da página.</p>
+    </section>
+
+</body>
+</html>
