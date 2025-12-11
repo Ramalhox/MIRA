@@ -564,50 +564,6 @@ body {
 .rede-icon.linkedin { background: #0A66C2; }
 .rede-icon.youtube { background: #FF0000; }
 
-/* Footer */
-.main-footer {
-    background: var(--bg-dark);
-    padding: 50px 0;
-    margin-top: 100px;
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 30px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: var(--text-white);
-}
-
-.footer-copyright {
-    color: var(--text-gray);
-    font-size: 14px;
-}
 
 /* Responsividade */
 @media (max-width: 1200px) {
@@ -680,8 +636,4 @@ body {
         padding: 20px;
     }
     
-    .footer-links {
-        flex-direction: column;
-        gap: 15px;
-    }
 }
