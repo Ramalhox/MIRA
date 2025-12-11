@@ -87,6 +87,18 @@
             <div class="modal-content">
                 <div class="modal-step active" id="step-1">
                     <div class="accessibility-options">
+
+                        <div class="accessibility-option" data-type="none">
+                            <div class="accessibility-icon">
+                               <i class="fa-solid fa-ban"></i>
+                            </div>
+                            <div>
+                                <h3 class="accessibility-title">Sem Deficiência</h3>
+                                <p class="accessibility-desc">Acesso padrão ao cinema sem recursos de acessibilidade
+                                    específicos.</p>
+                            </div>
+                        </div>
+
                         <div class="accessibility-option" data-type="hearing">
                             <div class="accessibility-icon">
                                 <i class="fas fa-deaf"></i>
@@ -397,23 +409,28 @@
         // Confirmar reserva
         function confirmBooking() {
             if (selectedSeat) {
-                // Atualizar informações do ticket
-                const event = EVENTS.find(e => e.id === currentEventId);
-                document.getElementById('ticket-event').textContent = event.title;
-                document.getElementById('ticket-date').textContent = event.date;
-                document.getElementById('ticket-seat').textContent = selectedSeat;
+        // Atualizar informações do ticket
+        const event = EVENTS.find(e => e.id === currentEventId);
+        document.getElementById('ticket-event').textContent = event.title;
+        document.getElementById('ticket-date').textContent = event.date;
+        document.getElementById('ticket-seat').textContent = selectedSeat;
 
-                const accessibilityType = document.getElementById('ticket-accessibility');
-                if (selectedNeedType === 'hearing') {
-                    accessibilityType.innerHTML = '<i class="fas fa-deaf"></i><span>Auditiva</span>';
-                    document.getElementById('accessibility-type-text').textContent = 'LIBRAS/Legendas';
-                } else {
-                    accessibilityType.innerHTML = '<i class="fas fa-eye"></i><span>Visual</span>';
-                    document.getElementById('accessibility-type-text').textContent = 'Audiodescrição';
-                }
+        const accessibilityType = document.getElementById('ticket-accessibility');
+        
+        // Atualizar conforme o tipo de acessibilidade selecionado
+        if (selectedNeedType === 'hearing') {
+            accessibilityType.innerHTML = '<i class="fas fa-deaf"></i><span>Auditiva</span>';
+            document.getElementById('accessibility-type-text').textContent = 'LIBRAS/Legendas';
+        } else if (selectedNeedType === 'visual') {
+            accessibilityType.innerHTML = '<i class="fas fa-eye"></i><span>Visual</span>';
+            document.getElementById('accessibility-type-text').textContent = 'Audiodescrição';
+        } else if (selectedNeedType === 'none') {
+            accessibilityType.innerHTML = '<i class="fas fa-check"></i><span>Nenhuma</span>';
+            document.getElementById('accessibility-type-text').textContent = 'Padrão';
+        }
 
-                goToStep(3);
-            }
+        goToStep(3);
+    }
         }
 
         // Abrir modal
