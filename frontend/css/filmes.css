@@ -74,6 +74,11 @@ body {
     letter-spacing: -0.5px;
 }
 
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 .main-nav {
     flex-grow: 1; 
     display: flex;

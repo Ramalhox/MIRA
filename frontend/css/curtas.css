@@ -75,24 +75,6 @@ body {
     position: relative;
 }
 
-/* Scroll personalizado com tema amarelo */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: var(--border-radius-xl);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-dark);
-}
-
 /* ------------------------------------------------------------------ */
 /* --- 1. HEADER E NAVEGAÇÃO - TEMA AMARELO --- */
 /* ------------------------------------------------------------------ */
@@ -115,6 +97,11 @@ body {
     color: var(--primary-color);
     min-width: 100px;
     letter-spacing: -0.5px;
+}
+
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .main-nav {

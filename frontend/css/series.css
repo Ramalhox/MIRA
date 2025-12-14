@@ -106,23 +106,9 @@ body {
     transition: transform var(--transition-fast);
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
-
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    background: var(--gradient-primary);
-    transition: width var(--transition-normal);
-}
-
-.logo:hover::after {
-    width: 100%;
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .main-nav {
