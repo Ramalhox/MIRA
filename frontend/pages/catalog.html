@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,8 @@
 </head>
 
 <body>
-    <div id="sabia-widget-container">
-
-    </div>
-
-    <div id="navbar-container">
-
-    </div>
+    <div id="sabia-widget-container"></div>
+    <div id="navbar-container"></div>
 
     <section class="hero-section">
         <div class="hero-content">
@@ -38,84 +33,13 @@
 
     <div class="main-container">
 
-        <section class="ranking-section">
-    
-    <div class="ranking-card" style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="ranking-number">1</div>
-        
-        <div style="flex: 1; padding: 0 15px; color: white; text-align: left;">
-            <h3 style="margin: 0; font-size: 1.2rem;">O Último Craque</h3>
-            <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">
-                Ele carrega o sonho de uma comunidade inteira nas chuteiras, mas o campo está minado.
-            </p>
-        </div>
-        <div class="ranking-img-box"><img src="../img_catalogo/ImgMira/O ultimo craque.png"></div>
-    </div>
-
-    <div class="ranking-card" style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="ranking-number">2</div>
-        
-        <div style="flex: 1; padding: 0 15px; color: white; text-align: left;">
-            <h3 style="margin: 0; font-size: 1.2rem;">Paixão de São João</h3>
-            <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">
-                Entre quadrilhas rivais no maior arraial do Nordeste, o amor acendeu a fogueira errada.
-            </p>
-        </div>
-        <div class="ranking-img-box"><img src="../img_catalogo/ImgMira/Paixao de sao joao.png"></div>
-    </div>
-
-    <div class="ranking-card" style="display: flex; align-items: center; justify-content: space-between;">
-        <div class="ranking-number">3</div>
-        
-        <div style="flex: 1; padding: 0 15px; color: white; text-align: left;">
-            <h3 style="margin: 0; font-size: 1.2rem;">O Assobio da Mata</h3>
-            <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">
-                Na Amazônia profunda, algumas lendas têm dentes e pés virados para trás.
-            </p>
-        </div>
-        <div class="ranking-img-box"><img src="../img_catalogo/ImgMira/O Assobio da mata.png"></div>
-    </div>
-
-        </section>
+        <section class="ranking-section" id="ranking-container">
+            </section>
 
         <h2 class="section-title">O Melhor do Cinema Brasileiro</h2>
 
-        <div class="mosaic-grid">
-            <div class="mosaic-item m-1">
-                <img src="../img_catalogo/ImgMira/colection.png" alt="Central do Brasil">
+        <div class="mosaic-grid" id="mosaic-container">
             </div>
-            <div class="mosaic-item m-2">
-                <img src="../img_catalogo/ImgMira/colection (7).png" style="object-position: top;" alt="">
-            </div>
-            <div class="mosaic-item m-3">
-                <img src="../img_catalogo/ImgMira/colection (1).png" alt="">
-            </div>
-
-            <div class="mosaic-item m-4">
-                <img src="../img_catalogo/ImgMira/colection (2).png" alt="">
-            </div>
-            <div class="mosaic-item m-5">
-                <img src="../img_catalogo/ImgMira/colection (4).png" alt="">
-            </div>
-            <div class="mosaic-item m-6">
-                <img src="../img_catalogo/ImgMira/colection (8).png" alt="">
-            </div>
-
-            <div class="mosaic-item m-7">
-                <div class="m-text-block">
-                    <h3 style="font-size: 2.5rem; text-transform: uppercase; line-height: 1;">
-                        Cinema<br>Brasileiro<br>2000</h3>
-                    <p style="margin-top: 15px; font-size: 1rem; color: rgba(255,255,255,0.8);">Uma década de ouro para
-                        nossa cultura.</p>
-                </div>
-            </div>
-            <div class="mosaic-item m-8">
-                <img src="../img_catalogo/ImgMira/colection (6).png" alt="">
-            </div>
-            <div class="mosaic-item m-9">
-                <img src="../img_catalogo/ImgMira/colection (5).png" alt="">
-            </div>
-        </div>
 
         <section class="collection-section">
             <div class="collection-text">
@@ -124,23 +48,7 @@
             </div>
 
             <div class="card-stack-container" id="card-stack" title="Clique para ver o próximo">
-                <div class="stack-card">
-                    <img src="../img_catalogo/ImgMira/O Assobio da mata.png" alt="Bacurau">
                 </div>
-                <div class="stack-card">
-                    <img src="../img_catalogo/ImgMira/O bado das Marias.png"
-                        alt="Tropa">
-                </div>
-                <div class="stack-card">
-                    <img src="../img_catalogo/ImgMira/Bloco C.png" alt="Cidade Deus">
-                </div>
-                <div class="stack-card">
-                    <img src="../img_catalogo/ImgMira/O ultimo craque.png" alt="Marighella">
-                </div>
-                <div class="stack-card">
-                    <img src="../img_catalogo/ImgMira/Os Guardioes do pantanal.png" alt="Lobo">
-                </div>
-            </div>
 
             <div class="collection-link">
                 <a href="#">VER MAIS</a>
@@ -149,33 +57,149 @@
 
     </div>
 
-    <div id="footer-container">
+    <div id="footer-container"></div>
 
-    </div>
-
-    <script src="../js/template.js">
-
-    </script>
+    <script src="../js/template.js"></script>
 
     <script>
 
-        const stackContainer = document.getElementById('card-stack');
+        // 1. Dados do Ranking
+        const rankingData = [
+            {
+                number: 1,
+                title: "O Último Craque",
+                desc: "Ele carrega o sonho de uma comunidade inteira nas chuteiras, mas o campo está minado.",
+                img: "../img_catalogo/ImgMira/O ultimo craque.png"
+            },
+            {
+                number: 2,
+                title: "Paixão de São João",
+                desc: "Entre quadrilhas rivais no maior arraial do Nordeste, o amor acendeu a fogueira errada.",
+                img: "../img_catalogo/ImgMira/Paixao de sao joao.png"
+            },
+            {
+                number: 3,
+                title: "O Assobio da Mata",
+                desc: "Na Amazônia profunda, algumas lendas têm dentes e pés virados para trás.",
+                img: "../img_catalogo/ImgMira/O Assobio da mata.png"
+            }
+        ];
 
-        function rotateCards() {
-            const cards = stackContainer.querySelectorAll('.stack-card');
-            if (cards.length < 2) return;
+        // 2. Dados do Mosaico
+        const mosaicData = [
+            { class: "m-1", type: "image", src: "../img_catalogo/ImgMira/colection.png", alt: "Central do Brasil" },
+            { class: "m-2", type: "image", src: "../img_catalogo/ImgMira/colection (7).png", alt: "", style: "object-position: top;" },
+            { class: "m-3", type: "image", src: "../img_catalogo/ImgMira/colection (1).png", alt: "" },
+            { class: "m-4", type: "image", src: "../img_catalogo/ImgMira/colection (2).png", alt: "" },
+            { class: "m-5", type: "image", src: "../img_catalogo/ImgMira/colection (4).png", alt: "" },
+            { class: "m-6", type: "image", src: "../img_catalogo/ImgMira/colection (8).png", alt: "" },
+            { class: "m-7", type: "text",  title: "CINEMA<br>BRASILEIRO<br>2000", subtitle: "Uma década de ouro para nossa cultura." },
+            { class: "m-8", type: "image", src: "../img_catalogo/ImgMira/colection (6).png", alt: "" },
+            { class: "m-9", type: "image", src: "../img_catalogo/ImgMira/colection (5).png", alt: "" }
+        ];
 
-            const topCard = cards[0];
-            topCard.classList.add('slide-out');
+        // 3. Dados do Stack (Pilha de Cards)
+        const stackData = [
+            { src: "../img_catalogo/ImgMira/O Assobio da mata.png", alt: "Bacurau" },
+            { src: "../img_catalogo/ImgMira/O bado das Marias.png", alt: "Tropa" },
+            { src: "../img_catalogo/ImgMira/Bloco C.png", alt: "Cidade Deus" },
+            { src: "../img_catalogo/ImgMira/O ultimo craque.png", alt: "Marighella" },
+            { src: "../img_catalogo/ImgMira/Os Guardioes do pantanal.png", alt: "Lobo" }
+        ];
 
-            setTimeout(() => {
-                topCard.classList.remove('slide-out');
-                stackContainer.appendChild(topCard);
-            }, 600);
+        // --- FUNÇÕES DE RENDERIZAÇÃO ---
+
+        function renderRanking() {
+            const container = document.getElementById('ranking-container');
+            let html = '';
+
+            rankingData.forEach(item => {
+                html += `
+                <div class="ranking-card" style="display: flex; align-items: center; justify-content: space-between;">
+                    <div class="ranking-number">${item.number}</div>
+                    
+                    <div style="flex: 1; padding: 0 15px; color: white; text-align: left;">
+                        <h3 style="margin: 0; font-size: 1.2rem;">${item.title}</h3>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">
+                            ${item.desc}
+                        </p>
+                    </div>
+                    <div class="ranking-img-box"><img src="${item.img}" alt="${item.title}"></div>
+                </div>`;
+            });
+
+            container.innerHTML = html;
         }
 
-        stackContainer.addEventListener('click', rotateCards);
+        function renderMosaic() {
+            const container = document.getElementById('mosaic-container');
+            let html = '';
 
+            mosaicData.forEach(item => {
+                html += `<div class="mosaic-item ${item.class}">`;
+                
+                if (item.type === 'image') {
+                    const styleAttr = item.style ? `style="${item.style}"` : '';
+                    html += `<img src="${item.src}" alt="${item.alt}" ${styleAttr}>`;
+                } else if (item.type === 'text') {
+                    html += `
+                    <div class="m-text-block">
+                        <h3 style="font-size: 2.5rem; text-transform: uppercase; line-height: 1;">
+                            ${item.title}
+                        </h3>
+                        <p style="margin-top: 15px; font-size: 1rem; color: rgba(255,255,255,0.8);">
+                            ${item.subtitle}
+                        </p>
+                    </div>`;
+                }
+                
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderStack() {
+            const container = document.getElementById('card-stack');
+            let html = '';
+
+            stackData.forEach(item => {
+                html += `
+                <div class="stack-card">
+                    <img src="${item.src}" alt="${item.alt}">
+                </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // --- INICIALIZAÇÃO ---
+
+        // Renderiza tudo ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            renderRanking();
+            renderMosaic();
+            renderStack();
+
+            setupStackRotation();
+        });
+
+        function setupStackRotation() {
+            const stackContainer = document.getElementById('card-stack');
+            
+            stackContainer.addEventListener('click', function() {
+                const cards = stackContainer.querySelectorAll('.stack-card');
+                if (cards.length < 2) return;
+
+                const topCard = cards[0];
+                topCard.classList.add('slide-out');
+
+                setTimeout(() => {
+                    topCard.classList.remove('slide-out');
+                    stackContainer.appendChild(topCard);
+                }, 600);
+            });
+        }
     </script>
 </body>
 

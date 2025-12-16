@@ -129,8 +129,6 @@
             const stats = [
                 { label: "Visualizações Totais", value: PRODUCER_STATS.totalViews, icon: "fas fa-eye", trend: "+12%", highlight: false },
                 { label: "Receita Estimada", value: PRODUCER_STATS.revenue, icon: "fas fa-credit-card", trend: "+5%", highlight: false },
-                { label: "Seguidores", value: PRODUCER_STATS.subscribers, icon: "fas fa-users", trend: "+0.8%", highlight: false },
-                { label: "Uso de Acessibilidade", value: PRODUCER_STATS.accessibilityUsage, icon: "fas fa-universal-access", trend: "+8%", highlight: true }
             ];
 
             stats.forEach(stat => {
@@ -194,19 +192,7 @@
             document.getElementById('upload-btn').addEventListener('click', function () {
                 alert('Funcionalidade de upload em desenvolvimento!');
             });
-
-            // Botão ver todos os uploads
-            document.getElementById('view-all-uploads').addEventListener('click', function () {
-                alert('Lista completa de conteúdos em desenvolvimento!');
-            });
-
-            // Select do gráfico
-            document.getElementById('chart-select').addEventListener('change', function () {
-                alert('Opção alterada para: ' + this.value);
-            });
         }
-
-
     </script>
 </body>
 

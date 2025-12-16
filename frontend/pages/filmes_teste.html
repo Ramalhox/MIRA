@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/catalog.css">
+    <title>MIRA | CATÁLOGO</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+        :root {
+            --primary-color: #e54609; /* Laranja da MiRA */
+            --bg-dark: #121212;
+            --bg-darker: #1a1a1a;
+            --text-white: #f0f0f0;
+            --text-gray: #888;
+            --border-color: #333;
+            --font-main: 'Josefin Sans', sans-serif;
+        }
+
+
+        a { text-decoration: none; color: inherit; }
+
+        .secondary-nav-links {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        .secondary-nav-links a {
+            cursor: pointer;
+        }
+
+        /* Estilo Ativo/Selecionado (Adicionado para JS) */
+        .secondary-nav-links a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px; /* Ajuste para compensar a borda */
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Utilitário para esconder abas */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Wrapper da aba Início, para manter o layout original */
+        /* .tab-content-wrapper {
+          
+        }  /* 
+
+        /* Estilo das Abas de Conteúdo */
+        .tab-content {
+            padding: 0; /* O main-container já tem padding */
+            min-height: 60vh;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* --- RANKING (Seu CSS Original) --- */
+        .ranking-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 100px;
+        }
+
+        .ranking-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(90deg, #e54609 0%, #5c1c06 40%, #121212 90%);
+            height: 200px;
+            border-radius: 4px;
+            padding: 0 50px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .ranking-card:hover {
+            transform: translateX(10px);
+        }
+
+        .ranking-number {
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.9);
+            margin-right: 20px;
+            line-height: 0.8;
+        }
+        
+        .ranking-img-box {
+            width: 280px;
+            height: 160px;
+            background-color: #333;
+            border-radius: 4px;
+            box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
+
+        .ranking-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* --- MOSAICO GRID (Seu CSS Original) --- */
+        .section-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 800;
+            border-left: 6px solid var(--primary-color);
+            padding-left: 15px;
+        }
+        
+        /* TÍTULO DE SEÇÃO INTERNA (Gênero/Tema/Tipo) */
+        .section-title-cat {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin: 40px 0 20px 0;
+            padding-left: 15px;
+            border-left: 6px solid var(--primary-color); 
+            text-transform: uppercase;
+        }
+
+        /* .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-auto-rows: 180px;
+            gap: 15px;
+            margin-bottom: 100px;
+        }
+
+        .mosaic-item {
+            position: relative;
+            background-color: #222;
+            border-radius: 44px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .mosaic-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transition: opacity 0.3s;
+            opacity: 0.9;
+        }
+
+        .mosaic-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .mosaic-item:hover img {
+            opacity: 1;
+        } */
+
+        /* Posicionamento dos itens no mosaico */
+        .m-1 { grid-column: span 4; grid-row: span 2; }
+        .m-2 { grid-column: span 4; grid-row: span 1; }
+        .m-3 { grid-column: span 4; grid-row: span 3; }
+        .m-4 { grid-column: span 4; grid-row: span 2; }
+        .m-5 { grid-column: span 4; grid-row: span 2; }
+        .m-6 { grid-column: span 8; grid-row: span 2; }
+        .m-7 { grid-column: span 4; grid-row: span 3; }
+        .m-8 { grid-column: span 4; grid-row: span 2; }
+        .m-9 { grid-column: span 4; grid-row: span 2; }
+
+        .m-text-block {
+            background-color: #0055aa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* --- STACK (Seu CSS Original) --- */
+        .collection-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-dark);
+            padding: 80px 0;
+            margin-bottom: 100px;
+            position: relative;
+            overflow: visible;
+            border-radius: 10px;
+        }
+
+        .collection-text {
+            flex: 1;
+            max-width: 400px;
+            z-index: 10;
+        }
+
+        .collection-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            margin-left: 30px;
+            color: var(--text-white);
+        }
+
+        .collection-link {
+            flex: 0 0 100px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        .collection-link a {
+            color: #ccc;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            margin-right: 25px;
+        }
+
+        .collection-link a:hover {
+            color: var(--primary-color);
+        }
+
+        .card-stack-container {
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 0 40px;
+            cursor: pointer;
+            perspective: 1000px;
+        }
+
+        .stack-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            transform-origin: center bottom;
+        }
+
+        .stack-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* LÓGICA DAS CAMADAS E CORES */
+        .stack-card:nth-child(1) { z-index: 4; transform: translateX(0) translateY(0) scale(1); border: 1px solid #333; }
+        .stack-card:nth-child(2) { z-index: 3; transform: translateX(20px) translateY(20px) scale(0.98); }
+        .stack-card:nth-child(2)::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(60, 60, 60, 0.9); }
+        .stack-card:nth-child(3) { z-index: 2; transform: translateX(40px) translateY(40px) scale(0.96); }
+        .stack-card:nth-child(3)::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--primary-color); }
+        .stack-card:nth-child(n+4) { z-index: 1; transform: translateX(40px) translateY(40px) scale(0.9); opacity: 0; }
+        .stack-card.slide-out { transform: translateX(-300px) rotate(-15deg) !important; opacity: 0 !important; }
+
+        /* --- GRID DE CONTEÚDO (NOVO DESIGN) --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+            padding: 0 0px; /* Remove o padding aqui, mantém no main-container */
+        }
+
+        .content-card {
+            background-color: var(--bg-darker);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary-color);
+        }
+
+        .card-image {
+            height: 150px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .content-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-progress {
+            height: 4px;
+            width: 100%;
+            background-color: #333;
+        }
+
+        .card-progress-bar {
+            height: 100%;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 5px var(--primary-color); 
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 14px;
+            color: var(--text-gray);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sabia-widget-container"></div>
+    
+    <div id="navbar-container">
+        <div>MIRA</div>
+        <div style="display: flex; gap: 15px; color: white;">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user-circle"></i>
+        </div>
+    </div>
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Flanantes</h1>
+            <p class="hero-desc">Um vídeo que retrata o skate de rua como forma de flanar pela cidade, transformando espaços urbanos em experiências livres, criativas e cheias de significado.</p>
+            <button class="hero-btn" onclick="">ASSISTIR</button>
+        </div>
+    </section>
+
+    <nav class="secondary-nav">
+        <ul class="secondary-nav-links">
+            <li><a onclick="switchTab('inicio')" id="nav-inicio" class="active">INÍCIO</a></li>
+            <li><a onclick="switchTab('filmes')" id="nav-filmes">FILMES</a></li>
+            <li><a onclick="switchTab('series')" id="nav-series">SÉRIES</a></li>
+            <li><a onclick="switchTab('documentarios')" id="nav-documentarios">DOCUMENTÁRIOS</a></li>
+            <li><a onclick="switchTab('curtas')" id="nav-curtas">CURTAS-METRAGENS</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+
+        <div id="tab-inicio" class="tab-content-wrapper">
+            
+            <section class="ranking-section" id="ranking-container">
+                </section>
+
+            <h2 class="section-title">O Melhor do Cinema Brasileiro</h2>
+
+            <div class="mosaic-grid" id="mosaic-container">
+                </div>
+
+            <section class="collection-section">
+                <div class="collection-text">
+                    <h2 class="collection-title">AÇÃO DE ROER<br>AS UNHAS</h2>
+                    <p class="collection-desc"></p>
+                </div>
+
+                <div class="card-stack-container" id="card-stack" title="Clique para ver o próximo">
+                    </div>
+
+                <div class="collection-link">
+                    <a href="#" onclick="switchTab('filmes')">VER MAIS</a>
+                </div>
+            </section>
+        </div>
+
+        <div id="tab-filmes" class="tab-content hidden">
+            <h2 class="section-title-cat">GÊNERO: Comédia</h2>
+            <div class="content-grid" id="filmes-comedia"></div>
+
+            <h2 class="section-title-cat">TEMA: Vida no Sertão</h2>
+            <div class="content-grid" id="filmes-sertao"></div>
+        </div>
+
+        <div id="tab-series" class="tab-content hidden">
+            <h2 class="section-title-cat">TIPO: Séries Originais MiRA</h2>
+            <div class="content-grid" id="series-originais"></div>
+            
+            <h2 class="section-title-cat">GÊNERO: Ficção Científica</h2>
+            <div class="content-grid" id="series-ficcao"></div>
+        </div>
+
+        <div id="tab-documentarios" class="tab-content hidden">
+            <h2 class="section-title-cat">TEMA: Questões Sociais</h2>
+            <div class="content-grid" id="docs-sociais"></div>
+            
+            <h2 class="section-title-cat">GÊNERO: Natureza e Biodiversidade</h2>
+            <div class="content-grid" id="docs-natureza"></div>
+        </div>
+
+        <div id="tab-curtas" class="tab-content hidden">
+            <h2 class="section-title-cat">Curtas em Destaque</h2>
+            <div class="content-grid" id="curtas-grid"></div>
+        </div>
+
+    </div>
+
+    <div id="footer-container">
+        <footer style="padding: 40px; text-align: center; color: #666; background-color: var(--bg-darker); margin-top: 50px;">
+            <p>&copy; 2024 MIRA Streaming. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="../js/template.js"></script>
+
+    <script>
+        // === DADOS DA ABA INÍCIO (SEU CÓDIGO ORIGINAL) ===
+        const rankingData = [
+            { number: 1, title: "O Último Craque", desc: "Ele carrega o sonho de uma comunidade inteira.", img: "../img_catalogo/ImgMira/O ultimo craque.png" },
+            { number: 2, title: "Paixão de São João", desc: "Entre quadrilhas rivais no maior arraial.", img: "../img_catalogo/ImgMira/Paixao de sao joao.png" },
+            { number: 3, title: "O Assobio da Mata", desc: "Na Amazônia profunda, lendas têm dentes.", img: "../img_catalogo/ImgMira/O Assobio da mata.png" }
+        ];
+
+        const mosaicData = [
+            { class: "m-1", type: "image", src: "../img_catalogo/ImgMira/colection.png", alt: "Central do Brasil" },
+            { class: "m-2", type: "image", src: "../img_catalogo/ImgMira/colection (7).png", alt: "", style: "object-position: top;" },
+            { class: "m-3", type: "image", src: "../img_catalogo/ImgMira/colection (1).png", alt: "" },
+            { class: "m-4", type: "image", src: "../img_catalogo/ImgMira/colection (2).png", alt: "" },
+            { class: "m-5", type: "image", src: "../img_catalogo/ImgMira/colection (4).png", alt: "" },
+            { class: "m-6", type: "image", src: "../img_catalogo/ImgMira/colection (8).png", alt: "" },
+            { class: "m-7", type: "text", title: "CINEMA<br>BRASILEIRO<br>2000", subtitle: "Uma década de ouro para nossa cultura." },
+            { class: "m-8", type: "image", src: "../img_catalogo/ImgMira/colection (6).png", alt: "" },
+            { class: "m-9", type: "image", src: "../img_catalogo/ImgMira/colection (5).png", alt: "" }
+        ];
+
+        const stackData = [
+            { src: "../img_catalogo/ImgMira/O Assobio da mata.png", alt: "Bacurau" },
+            { src: "../img_catalogo/ImgMira/O bado das Marias.png", alt: "Tropa" },
+            { src: "../img_catalogo/ImgMira/Bloco C.png", alt: "Cidade Deus" },
+            { src: "../img_catalogo/ImgMira/O ultimo craque.png", alt: "Marighella" },
+            { src: "../img_catalogo/ImgMira/Os Guardioes do pantanal.png", alt: "Lobo" }
+        ];
+
+        // === DADOS PARA AS NOVAS ABAS (FILMES, SÉRIES, ETC) ===
+        // Usando placeholders, substitua pelos caminhos reais das suas imagens
+        const catalogData = {
+            filmesComedia: [
+                { title: "Paixão de Sao Joao", meta: "Comédia • 1h 44m", progress: 0, img: "../img_catalogo/ImgMira/Paixao de sao joao.png" }
+                // { title: "Minha Mãe é uma Peça", meta: "Comédia • 1h 25m", progress: 80, img: "../img_catalogo/ImgMira/colection (7).png" },
+                // { title: "Lisbela e o Prisioneiro", meta: "Comédia • 1h 46m", progress: 0, img: "../img_catalogo/ImgMira/colection (8).png" },
+                // { title: "Deus é Brasileiro", meta: "Comédia • 1h 50m", progress: 30, img: "../img_catalogo/ImgMira/colection (1).png" }
+            ],
+            filmesSertao: [
+                { title: "Paixão de Sao Joao", meta: "Comédia • 1h 44m", progress: 0, img: "../img_catalogo/ImgMira/Paixao de sao joao.png" }
+                // { title: "Abril Despedaçado", meta: "Drama • 1h 45m", progress: 10, img: "../img_catalogo/ImgMira/colection (4).png" },
+                // { title: "Cabra Marcado...", meta: "Documentário • 1h 59m", progress: 0, img: "../img_catalogo/ImgMira/colection (5).png" }
+            ],
+            seriesOriginais: [
+                { title: "3%", meta: "Ficção • 4 Temporadas", progress: 0, img: "../img_catalogo/ImgMira/colection (4).png" },
+                { title: "Dom", meta: "Crime • 3 Temporadas", progress: 20, img: "../img_catalogo/ImgMira/colection (1).png" }
+            ],
+            seriesFiccao: [
+                { title: "O assobio da Mata", meta: "Terror • 1 Temporada", progress: 0, img: "../img_catalogo/ImgMira/O Assobio da mata.png" },
+                { title: "O Mecanismo", meta: "Drama • 4 Temporadas", progress: 95, img: "../img_catalogo/ImgMira/colection (7).png" }
+            ],
+            docsSociais: [
+                { title: "Edifício Master", meta: "Cotidiano • 1h 50m", progress: 0, img: "../img_catalogo/ImgMira/colection (5).png" },
+                { title: "Ilha das Flores", meta: "Curta/Doc • 13m", progress: 100, img: "../img_catalogo/ImgMira/colection (6).png" }
+            ],
+            docsNatureza: [
+                { title: "Guardiões do Pantanal", meta: "Natureza • 50m", progress: 45, img: "../img_catalogo/ImgMira/Os Guardioes do pantanal.png" },
+            ],
+            curtasGrid: [
+                { title: "Flanantes", meta: "Skate • 15m", progress: 0, img: "../assets/img/flanantes.jpg" },
+                { title: "Bloco C", meta: "Terror • 10m", progress: 0, img: "../img_catalogo/ImgMira/Bloco C.png" }
+            ]
+        };
+
+        // --- FUNÇÕES DE RENDERIZAÇÃO DO INÍCIO (Seu código adaptado) ---
+        function renderRanking() {
+            const container = document.getElementById('ranking-container');
+            let html = '';
+            rankingData.forEach(item => {
+                html += `
+                <div class="ranking-card">
+                    <div class="ranking-number">${item.number}</div>
+                    <div style="flex: 1; padding: 0 15px; color: white; text-align: left;">
+                        <h3 style="margin: 0; font-size: 1.2rem;">${item.title}</h3>
+                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8;">${item.desc}</p>
+                    </div>
+                    <div class="ranking-img-box"><img src="${item.img}" alt="${item.title}"></div>
+                </div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderMosaic() {
+            const container = document.getElementById('mosaic-container');
+            let html = '';
+            mosaicData.forEach(item => {
+                html += `<div class="mosaic-item ${item.class}">`;
+                if (item.type === 'image') {
+                    const styleAttr = item.style ? `style="${item.style}"` : '';
+                    html += `<img src="${item.src}" alt="${item.alt}" ${styleAttr}>`;
+                } else if (item.type === 'text') {
+                    html += `
+                    <div class="m-text-block">
+                        <h3 style="font-size: 2.5rem; text-transform: uppercase; line-height: 1;">${item.title}</h3>
+                        <p style="margin-top: 15px; font-size: 1rem; color: rgba(255,255,255,0.8);">${item.subtitle}</p>
+                    </div>`;
+                }
+                html += `</div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function renderStack() {
+            const container = document.getElementById('card-stack');
+            let html = '';
+            stackData.forEach(item => {
+                html += `<div class="stack-card"><img src="${item.src}" alt="${item.alt}"></div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function setupStackRotation() {
+            const stackContainer = document.getElementById('card-stack');
+            if(!stackContainer) return;
+            
+            stackContainer.addEventListener('click', function() {
+                const cards = stackContainer.querySelectorAll('.stack-card');
+                if (cards.length < 2) return;
+                const topCard = cards[0];
+                topCard.classList.add('slide-out');
+                
+                setTimeout(() => {
+                    topCard.classList.remove('slide-out');
+                    stackContainer.appendChild(topCard);
+                }, 600);
+            });
+        }
+        
+        // === FUNÇÃO GENÉRICA PARA RENDERIZAR CARDS (NOVO DESIGN) ===
+        function renderCardGrid(data, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'content-card';
+                
+                const progressWidth = item.progress ? `${item.progress}%` : '0%';
+                
+                card.innerHTML = `
+                    <div class="card-image">
+                        <img src="${item.img}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/300x169?text=${item.title.replace(/\s/g, '+')}'">
+                    </div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" style="width: ${progressWidth}"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">${item.title}</h3>
+                        <p class="card-meta">
+                            <span>${item.meta}</span>
+                        </p>
+                    </div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    console.log(`Iniciando: ${item.title}`);
+                });
+                
+                container.appendChild(card);
+            });
+        }
+
+        // === LÓGICA DE NAVEGAÇÃO (ABAS) ===
+        function switchTab(tabName) {
+            // 1. Atualizar Navegação
+            document.querySelectorAll('.secondary-nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            const activeLink = document.getElementById(`nav-${tabName}`);
+            if(activeLink) activeLink.classList.add('active');
+
+            // 2. Mostrar/Esconder Conteúdo
+            document.querySelectorAll('.tab-content-wrapper, .tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // 3. Mostra o alvo
+            const target = document.getElementById(`tab-${tabName}`);
+            if (target) {
+                target.classList.remove('hidden');
+            }
+        }
+
+        // === INICIALIZAÇÃO GERAL ===
+        document.addEventListener('DOMContentLoaded', () => {
+            // Renderiza conteúdo da aba INÍCIO
+            renderRanking();
+            renderMosaic();
+            renderStack();
+            setupStackRotation();
+
+            // Renderiza o conteúdo das outras abas
+            renderCardGrid(catalogData.filmesComedia, 'filmes-comedia');
+            renderCardGrid(catalogData.filmesSertao, 'filmes-sertao');
+            renderCardGrid(catalogData.seriesOriginais, 'series-originais');
+            renderCardGrid(catalogData.seriesFiccao, 'series-ficcao');
+            renderCardGrid(catalogData.docsSociais, 'docs-sociais');
+            renderCardGrid(catalogData.docsNatureza, 'docs-natureza');
+            renderCardGrid(catalogData.curtasGrid, 'curtas-grid');
+
+            // Garante que iniciamos na aba Início
+            switchTab('inicio');
+        });
+
+    </script>
+</body>
+</html>

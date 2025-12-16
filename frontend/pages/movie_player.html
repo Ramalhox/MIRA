@@ -355,44 +355,10 @@
 
     <!-- Botão Fixo de Feedback -->
     <button class="feedback-fixed-btn" id="feedbackFixedBtn">
-        <a href="#"></a>
         <i class="fas fa-universal-access"></i>
         <span class="btn-text">Avaliar Acessibilidade</span>
         <span class="feedback-badge" id="feedbackBadge">Novo!</span>
     </button>
-
-    <!-- Modal de Sugestão de Feedback -->
-    <div class="feedback-suggestion-modal" id="feedbackSuggestionModal">
-        <div class="modal-header">
-            <h4><i class="fas fa-universal-access"></i> Ajude a Melhorar</h4>
-            <button class="close-modal-btn" id="closeSuggestionModal">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <div class="film-progress-indicator">
-            <div class="film-progress-bar" id="filmProgressBar"></div>
-        </div>
-
-        <div class="modal-content">
-            <p><strong>Você assistiu 75% do filme!</strong></p>
-            <p>Gostaríamos da sua opinião sobre as ferramentas de acessibilidade utilizadas.</p>
-            <p>Sua avaliação ajuda a melhorar a experiência para todos.</p>
-        </div>
-
-        <div class="modal-actions">
-            <button class="modal-btn modal-btn-primary" id="evaluateNowBtn">
-                <i class="fas fa-star"></i> Avaliar Agora
-            </button>
-            <button class="modal-btn modal-btn-secondary" id="laterBtn">
-                <i class="far fa-clock"></i> Mais Tarde
-            </button>
-        </div>
-
-        <label class="dont-show-again">
-            <input type="checkbox" id="dontShowAgain"> Não mostrar novamente
-        </label>
-    </div>
 
     <!-- Modal de Feedback após filme -->
     <div class="post-movie-modal" id="postMovieModal">
@@ -455,7 +421,7 @@
         // Sistema Completo de Movie Player
         document.addEventListener('DOMContentLoaded', function () {
             initializeMoviePlayer();
-            initializeFeedbackSystem();
+            setupFeedbackRedirect();
         });
 
         // Sistema do Movie Player
@@ -505,11 +471,21 @@
                 // Fechar trailer
                 document.getElementById('closeTrailerBtn')?.addEventListener('click', closeTrailer);
 
+                // Botão de feedback fixo
+                document.getElementById('feedbackFixedBtn')?.addEventListener('click', goToFeedback);
+
+                // Botão de avaliação pós-filme
+                document.getElementById('postEvaluateBtn')?.addEventListener('click', goToFeedback);
+
+                // Fechar modal pós-filme
+                document.getElementById('closePostMovieModalBtn')?.addEventListener('click', closePostMovieModal);
+                document.getElementById('continueBtn')?.addEventListener('click', closeAndContinue);
+                document.getElementById('rateFilmBtn')?.addEventListener('click', rateFilmAfterWatching);
+
                 // Fechar modal com ESC
                 document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape') {
                         closeTrailer();
-                        hideSuggestionModal();
                         closePostMovieModal();
                     }
                 });
@@ -562,6 +538,14 @@
                 }
             }
 
+            function rateFilmAfterWatching() {
+                const rating = prompt('De 1 a 5, qual sua avaliação para este filme?');
+                if (rating && rating >= 1 && rating <= 5) {
+                    showNotification(`Obrigado! Você avaliou com ${rating} estrelas.`);
+                    closePostMovieModal();
+                }
+            }
+
             function playTrailer() {
                 document.getElementById('trailerModal').style.display = 'flex';
                 document.body.style.overflow = 'hidden';
@@ -580,6 +564,28 @@
 
             function viewBiography() {
                 alert('Abrindo biografia completa de Eduardo Marinho...');
+            }
+
+            function goToFeedback() {
+                const filmData = {
+                    id: 1,
+                    title: "Observar e Absorver",
+                    watchedAt: new Date().toISOString()
+                };
+                localStorage.setItem('lastWatchedFilm', JSON.stringify(filmData));
+                window.location.href = 'feedback.html';
+            }
+
+            function closePostMovieModal() {
+                const postMovieModal = document.getElementById('postMovieModal');
+                if (postMovieModal) {
+                    postMovieModal.classList.remove('active');
+                }
+            }
+
+            function closeAndContinue() {
+                closePostMovieModal();
+                window.location.href = 'catalog.html';
             }
 
             // Atualizar ícones
@@ -612,6 +618,28 @@
 
             function saveDocumentaryState() {
                 localStorage.setItem(`doc_${documentary.id}`, JSON.stringify(documentary));
+            }
+
+            // Simular progresso do filme
+            function startFilmProgress() {
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += 0.1;
+
+                    // Mostrar modal pós-filme em 100%
+                    if (progress >= 100) {
+                        clearInterval(interval);
+
+                        // Mostrar modal pós-filme após 2 segundos
+                        setTimeout(() => {
+                            const postMovieModal = document.getElementById('postMovieModal');
+                            const dontShowPostModal = localStorage.getItem('dontShowPostModal') === 'true';
+                            if (postMovieModal && !dontShowPostModal) {
+                                postMovieModal.classList.add('active');
+                            }
+                        }, 2000);
+                    }
+                }, 100); // A cada 100ms
             }
 
             // Configurar carrossel
@@ -651,211 +679,40 @@
                 });
             }
 
+            // Configurar "não mostrar novamente" para modal pós-filme
+            function setupDontShowAgain() {
+                const dontShowPostCheckbox = document.getElementById('dontShowPostModal');
+                if (dontShowPostCheckbox) {
+                    const dontShowPostModal = localStorage.getItem('dontShowPostModal') === 'true';
+                    dontShowPostCheckbox.checked = dontShowPostModal;
+                    dontShowPostCheckbox.addEventListener('change', function () {
+                        localStorage.setItem('dontShowPostModal', this.checked);
+                    });
+                }
+            }
+
             // Inicializar
             loadDocumentaryState();
             setupEventListeners();
             setupCarousel();
+            setupDontShowAgain();
         }
 
-        // Sistema de Feedback Inteligente
-        function initializeFeedbackSystem() {
-            // Configurações de feedback
-            const feedbackSettings = {
-                dontShowSuggestion: localStorage.getItem('dontShowFeedbackSuggestion') === 'true',
-                dontShowPostModal: localStorage.getItem('dontShowPostModal') === 'true',
-                lastShown: localStorage.getItem('feedbackLastShown') || null,
-                timesShown: parseInt(localStorage.getItem('feedbackTimesShown')) || 0
-            };
-
-            // Elementos
+        // Sistema de Feedback Simples
+        function setupFeedbackRedirect() {
+            // Botão fixo de feedback
             const fixedBtn = document.getElementById('feedbackFixedBtn');
-            const suggestionModal = document.getElementById('feedbackSuggestionModal');
-            const postMovieModal = document.getElementById('postMovieModal');
-            const progressBar = document.getElementById('filmProgressBar');
-
-            // Configurar eventos
-            function setupFeedbackEvents() {
-                // Botão fixo
-                fixedBtn?.addEventListener('click', function () {
-                    if (!suggestionModal.classList.contains('active')) {
-                        showSuggestionModal();
-                    } else {
-                        hideSuggestionModal();
-                    }
+            if (fixedBtn) {
+                fixedBtn.addEventListener('click', function() {
+                    const filmData = {
+                        id: 1,
+                        title: "Observar e Absorver",
+                        accessedAt: new Date().toISOString()
+                    };
+                    localStorage.setItem('feedbackFilmData', JSON.stringify(filmData));
+                    window.location.href = 'feedback.html';
                 });
-
-                // Fechar modal de sugestão
-                document.getElementById('closeSuggestionModal')?.addEventListener('click', hideSuggestionModal);
-                document.getElementById('laterBtn')?.addEventListener('click', hideSuggestionModal);
-
-                // Avaliar agora
-                document.getElementById('evaluateNowBtn')?.addEventListener('click', goToFeedback);
-                document.getElementById('postEvaluateBtn')?.addEventListener('click', goToFeedback);
-
-                // Botões do modal pós-filme
-                document.getElementById('rateFilmBtn')?.addEventListener('click', () => {
-                    const rating = prompt('De 1 a 5, qual sua avaliação para este filme?');
-                    if (rating && rating >= 1 && rating <= 5) {
-                        showNotification(`Obrigado! Você avaliou com ${rating} estrelas.`);
-                        closePostMovieModal();
-                    }
-                });
-
-                document.getElementById('continueBtn')?.addEventListener('click', closeAndContinue);
-                document.getElementById('closePostMovieModalBtn')?.addEventListener('click', closePostMovieModal);
-
-                // Fechar modal ao clicar fora
-                document.addEventListener('click', function (event) {
-                    if (suggestionModal.classList.contains('active') &&
-                        !suggestionModal.contains(event.target) &&
-                        !fixedBtn.contains(event.target)) {
-                        hideSuggestionModal();
-                    }
-                });
-
-                // Não mostrar novamente
-                const dontShowCheckbox = document.getElementById('dontShowAgain');
-                const dontShowPostCheckbox = document.getElementById('dontShowPostModal');
-
-                if (dontShowCheckbox) {
-                    dontShowCheckbox.checked = feedbackSettings.dontShowSuggestion;
-                    dontShowCheckbox.addEventListener('change', function () {
-                        localStorage.setItem('dontShowFeedbackSuggestion', this.checked);
-                        feedbackSettings.dontShowSuggestion = this.checked;
-                    });
-                }
-
-                if (dontShowPostCheckbox) {
-                    dontShowPostCheckbox.checked = feedbackSettings.dontShowPostModal;
-                    dontShowPostCheckbox.addEventListener('change', function () {
-                        localStorage.setItem('dontShowPostModal', this.checked);
-                        feedbackSettings.dontShowPostModal = this.checked;
-                    });
-                }
-
-                // Atualizar badge
-                updateFeedbackBadge();
             }
-
-            // Mostrar modal de sugestão
-            function showSuggestionModal() {
-                if (suggestionModal && !feedbackSettings.dontShowSuggestion && shouldShowFeedback()) {
-                    suggestionModal.classList.add('active');
-
-                    // Esconder badge
-                    const badge = document.getElementById('feedbackBadge');
-                    if (badge) {
-                        badge.style.display = 'none';
-                    }
-
-                    // Atualizar contagem
-                    feedbackSettings.timesShown++;
-                    localStorage.setItem('feedbackTimesShown', feedbackSettings.timesShown);
-                    localStorage.setItem('feedbackLastShown', new Date().toISOString());
-                }
-            }
-
-            // Esconder modal de sugestão
-            function hideSuggestionModal() {
-                suggestionModal?.classList.remove('active');
-            }
-
-            // Fechar modal pós-filme
-            function closePostMovieModal() {
-                postMovieModal?.classList.remove('active');
-            }
-
-            // Simular progresso do filme
-            function startFilmProgress() {
-                if (!progressBar) return;
-
-                let progress = 0;
-                const interval = setInterval(() => {
-                    progress += 0.1;
-                    progressBar.style.width = `${Math.min(progress, 100)}%`;
-
-                    // Mostrar sugestão em 75%
-                    if (progress >= 75 && progress < 76) {
-                        if (!feedbackSettings.dontShowSuggestion && shouldShowFeedback()) {
-                            showSuggestionModal();
-                        }
-                    }
-
-                    // Mostrar modal pós-filme em 100%
-                    if (progress >= 100) {
-                        clearInterval(interval);
-
-                        // Mostrar modal pós-filme após 2 segundos
-                        setTimeout(() => {
-                            if (postMovieModal && !feedbackSettings.dontShowPostModal) {
-                                postMovieModal.classList.add('active');
-                            }
-                        }, 2000);
-                    }
-                }, 100); // A cada 100ms
-            }
-
-            // Verificar se deve mostrar feedback
-            function shouldShowFeedback() {
-                const settings = feedbackSettings;
-
-                if (settings.dontShowSuggestion && settings.dontShowPostModal) {
-                    return false;
-                }
-
-                if (settings.timesShown > 10) {
-                    return false;
-                }
-
-                if (settings.lastShown) {
-                    const lastDate = new Date(settings.lastShown);
-                    const now = new Date();
-                    const hoursDiff = Math.abs(now - lastDate) / 36e5;
-
-                    if (hoursDiff < 4) {
-                        return false;
-                    }
-                }
-
-                return true;
-            }
-
-            // Atualizar badge de feedback
-            function updateFeedbackBadge() {
-                const badge = document.getElementById('feedbackBadge');
-                if (!badge) return;
-
-                const lastShown = feedbackSettings.lastShown;
-                if (lastShown) {
-                    const lastDate = new Date(lastShown);
-                    const now = new Date();
-                    const hoursDiff = Math.abs(now - lastDate) / 36e5;
-
-                    if (hoursDiff < 24 && feedbackSettings.timesShown > 3) {
-                        badge.style.display = 'none';
-                    }
-                }
-            }
-
-            // Ir para página de feedback
-            function goToFeedback() {
-                const filmData = {
-                    id: 1,
-                    title: "Observar e Absorver",
-                    watchedAt: new Date().toISOString()
-                };
-                localStorage.setItem('lastWatchedFilm', JSON.stringify(filmData));
-                window.location.href = 'feedback.html';
-            }
-
-            // Fechar e continuar
-            function closeAndContinue() {
-                closePostMovieModal();
-                window.location.href = 'catalog.html';
-            }
-
-            // Inicializar
-            setupFeedbackEvents();
         }
 
         // Função auxiliar para mostrar notificações
